@@ -1,0 +1,33 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+  /* font-family:"Locust";
+  src:url("/fonts/Locust.ttf"); */
+  font-style:normal;
+  font-weight:300;
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color:white;
+  scroll-behavior:smooth !important ;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+input{
+  color: black !important;
+}
