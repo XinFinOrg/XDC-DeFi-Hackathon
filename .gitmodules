@@ -1,0 +1,3 @@
+[submodule "soul"]
+	path = soul
+	url = https://github.com/malawadd/soul-token.git
