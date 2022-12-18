@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "xdctind",
+    "slug": "xdctind",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/images/icon.png",
+    "scheme": "xdctind",
+    "githubUrl": "https://github.com/jongan69/xdctind",
+    "description": "An app that pays users to do favors for one another",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./src/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFF"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "backgroundColor": "#000"
+      }
+    },
+    "web": {
+      "favicon": "./src/assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d3759bd9-f842-4879-b0ff-09dc8aa5f07f"
+      }
+    }
+  }
+}
