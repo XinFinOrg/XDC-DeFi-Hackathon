@@ -1,3 +1,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/synergy-xdc/frontend.git
+[submodule "synergy-contracts"]
+	path = synergy-contracts
+	url = https://github.com/synergy-xdc/synergy-contracts.git
