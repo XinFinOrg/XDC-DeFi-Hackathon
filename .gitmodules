@@ -1,3 +1,6 @@
 [submodule "soul"]
 	path = soul
 	url = https://github.com/malawadd/soul-token.git
+[submodule "sxd"]
+	path = sxd
+	url = https://github.com/malawadd/sxd
