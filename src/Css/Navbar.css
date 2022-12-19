@@ -1,0 +1,11 @@
+li{
+    font-size: 1.2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    /* font-weight: bold; */
+}
+
+li:hover{
+    background-color: rgb(237, 237, 237);
+    border-radius: 30px;
+}
