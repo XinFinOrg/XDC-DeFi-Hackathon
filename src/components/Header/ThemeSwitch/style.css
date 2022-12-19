@@ -1,0 +1,71 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  margin: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4b4b4b;
+  -webkit-box-shadow: inset 0 0 6px rgba(245, 245, 245, 0.25);
+  box-shadow: inset 0 0 6px rgba(245, 245, 245, 0.25);
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch .slider::before {
+  position: absolute;
+  content: '';
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 0 15px #2020203d;
+  box-shadow: 0 0 15px #2020203d;
+  background-image: url('./images/dark_icon.svg');
+  background-color: #f5f5f5;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round::before {
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background: #e1e1e1;
+  -webkit-box-shadow: inset 0 0 6px rgba(23, 23, 23, 0.15);
+  box-shadow: inset 0 0 6px rgba(23, 23, 23, 0.15);
+}
+
+.switch input:checked + .slider::before {
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+  background-image: url('./images/light_icon.svg');
+  background-color: #171717;
+  background-repeat: no-repeat;
+  background-position: center;
+}

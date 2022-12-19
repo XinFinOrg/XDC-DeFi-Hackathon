@@ -1,0 +1,18 @@
+#codeArea {
+  outline: none;
+  padding-left: 30px !important;
+  height: 100%;
+}
+
+pre {
+  padding-left: 30px !important;
+}
+
+.csvTextareaLineNumber {
+  position: absolute;
+  left: 0px;
+  color: rgb(146, 135, 135);
+  text-align: left;
+  width: 37px;
+  font-weight: 100;
+}
