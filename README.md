@@ -8,7 +8,7 @@ _[Click on the video to view it on YouTube](https://youtu.be/IxsvO4jcZ48)_
 
 ### 👨‍🔬 What is XDC-Fi?
 
-XDC-Fi is a DeFi project that consists of a staking app, lending app, and has an entire Decentralized Exchange built on top of the XDC chain [XDC-Fi](https://sc-dex-xdc.vercel.app/)
+XDC-Fi is a DeFi project that consists of a staking app, lending app, and has an entire Decentralized Exchange built on top of the XDC chain [XDC-Fi](https://xdc-fi.vercel.app/)
 
 And if that were'nt enough, it also consists of an entire npm package that allows you to interact with the core contracts to build different types of DeFi contracts and applications ontop of the XDC Chain.
 
