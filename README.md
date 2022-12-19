@@ -1,2 +1,2 @@
-# XDC-DeFi-Hackathon
-XDC Network DeFi Hackathon
+# Project Talent-Musica
+Submission of my XDC project named Talent-Musica
