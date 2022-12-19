@@ -28,9 +28,7 @@ export const USDT = new Token(ChainId.MAINNET, '0xFC4F6E92143621D1ff144C1ff5b7f1
 export const USDC = new Token(ChainId.MAINNET, '0x6bb92A5E17e28E9D3f7Eb2B58E9DA4E5278Da0bC', 18, 'USDC', 'USD Coin');
 export const DAI = new Token(ChainId.MAINNET, '0xbf0A736F6107D10fCE53d056C95fD73d266283Bb', 18, 'DAI', 'Dai Stablecoin');
 export const XDCS = new Token(ChainId.XDC, '0x9a4FFBec1FE81a68A089F51D8be30CE32640b0e9', 18, 'XDCS', 'XDCSwap Token');
-export const USDG = new Token(ChainId.XDC, '0x9c1eb1ea34e70ac05b5ee5515212e9ec201cfc5d', 18, 'USDG', 'USDG');
 export const GBEX = new Token(ChainId.XDC, '0x34514748F86A8dA01Ef082306b6d6e738F777f5A', 18, 'GBEX', 'Globiance Exchange Token');
-export const SGDG = new Token(ChainId.XDC, '0x9a4FFBec1FE81a68A089F51D8be30CE32640b0e9', 18, 'SGDG', 'Globiance SDG Stablecoin');
 //export const XDCS = new Token(ChainId.XDC, '0x9a4FFBec1FE81a68A089F51D8be30CE32640b0e9', 18, 'XDCS', 'XDCSwap Token');
 //export const XDCS = new Token(ChainId.XDC, '0x9a4FFBec1FE81a68A089F51D8be30CE32640b0e9', 18, 'XDCS', 'XDCSwap Token');
 //export const XDCS = new Token(ChainId.XDC, '0x9a4FFBec1FE81a68A089F51D8be30CE32640b0e9', 18, 'XDCS', 'XDCSwap Token');
@@ -77,7 +75,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
-  [ChainId.XDC]: [...WETH_ONLY[ChainId.XDC], XDCS, GBEX, USDG],
+  [ChainId.XDC]: [...WETH_ONLY[ChainId.XDC], XDCS, GBEX],
 };
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -99,9 +97,6 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     ],
     [USDC, USDT],
     [DAI, USDT],
-  ],
-  [ChainId.XDC]: [
-    [XDCS, GBEX],
   ],
 };
 
