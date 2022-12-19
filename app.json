@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "xdctind",
-    "slug": "xdctind",
+    "name": "gettrdone",
+    "slug": "gettrdone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/images/icon.png",
-    "scheme": "xdctind",
-    "githubUrl": "https://github.com/jongan69/xdctind",
-    "description": "An app that pays users to do favors for one another",
+    "scheme": "gettrdone",
+    "githubUrl": "https://github.com/jongan69/XDC-DeFi-Hackathon",
+    "description": "A Web3 Goal Setting",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./src/assets/images/splash.png",
