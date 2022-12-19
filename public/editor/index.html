@@ -1,0 +1,135 @@
+<!-- Javi Agenjo (@tamat) on 31/9/2011 -->
+<!DOCTYPE html>
+<html><head>
+    <title>XDCFlow</title>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" type="text/css" href="./js-snackbar.min.css">
+    <link rel="stylesheet" type="text/css" href="css/litegraph.css">
+    <link rel="stylesheet" type="text/css" href="css/litegraph-editor.css">
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="./js-snackbar.min.js"></script>
+    <script type="text/javascript" src="/web3.min.js"></script>
+	</head>
+<body>
+	<div id="main">
+	</div>
+
+    <script type="text/javascript" src="external/jquery-1.6.2.min.js"></script>
+    <!--<script type="text/javascript" src="https://tamats.com/projects/sillyserver/src/sillyclient.js"></script>-->
+	<!-- <script type="text/javascript" src="https://unpkg.com/codeflask/build/codeflask.min.js"></script> -->
+	<script type="text/javascript" src="js/libs/gl-matrix-min.js"></script>
+    <!--<script type="text/javascript" src="js/libs/audiosynth.js"></script>-->
+    <!--<script type="text/javascript" src="js/libs/midi-parser.js"></script>-->
+
+    <script type="text/javascript" src="litegraph.js"></script>
+    <script type="text/javascript" src="litegraph-editor.js"></script>
+    <script type="text/javascript" src="js/defaults.js"></script>
+    <script src="js/web3-storage.js" type="module"></script>
+    <script type="text/javascript" src="nodes/base.js"></script>
+    <script type="text/javascript" src="nodes/logic.js"></script>
+    <!--<script type="text/javascript" src="nodes/events.js"></script>-->
+    <script type="text/javascript" src="nodes/math.js"></script>
+    <!--<script type="text/javascript" src="nodes/math3d.js"></script>-->
+    <script type="text/javascript" src="nodes/strings.js"></script>
+    <!--<script type="text/javascript" src="nodes/interface.js"></script>
+    <script type="text/javascript" src="nodes/geometry.js"></script>
+    <script type="text/javascript" src="nodes/graphics.js"></script>-->
+    <!--<script type="text/javascript" src="nodes/input.js"></script>-->
+    <!--<script type="text/javascript" src="/nodes/midi.js"></script>
+    <script type="text/javascript" src="/nodes/audio.js"></script>-->
+    <!--<script type="text/javascript" src="nodes/network.js"></script>-->
+	<script type="text/javascript" src="flowx-nodes/eventListner.js"></script>
+    <script type="text/javascript" src="flowx-nodes/viewCall.js"></script>
+    <script type="text/javascript" src="flowx-nodes/methodCall.js"></script>
+    <script type="text/javascript" src="flowx-nodes/scheduleTask.js"></script>
+    <script type="text/javascript" src="flowx-nodes/swapTT.js"></script>
+    <script type="text/javascript" src="flowx-nodes/swapTX.js"></script>
+    <script type="text/javascript" src="flowx-nodes/swapXT.js"></script>
+    <script type="text/javascript" src="flowx-nodes/xdcPrice.js"></script>
+    <script type="text/javascript" src="flowx-nodes/tokenPrice.js"></script>
+    <script type="text/javascript" src="flowx-nodes/tokenRelative.js"></script>
+    <script type="text/javascript" src="flowx-nodes/telegramSend.js"></script>
+
+    <!--<script type="text/javascript" src="flowx-nodes/routerAssestSwap.js"></script>-->
+    <!--<script type="text/javascript" src="flowx-nodes/pushProtocol.js"></script>-->
+
+    <script type="text/javascript" src="flowx-nodes/uniswapTheGraph.js"></script>
+    <!--<script type="text/javascript" src="js/demos.js"></script>-->
+	<script type="text/javascript" src="js/code.js"></script>
+
+	<script type="text/javascript" src="nodes/others.js"></script>
+    <div id="loader" style="position: absolute;top: 50%;left: 50%; display: none;">
+        <div class="spinner icon-spinner-4" aria-hidden="true"></div>
+    </div>
+    <div id="cid_popup" style="display: none; padding:10px; position: absolute; top: 40%;left: 35%;width: 600px;height: 130px; background-color: #333; text-align: center;">
+        <span id="cid_text" style="font-weight: bold;margin:10px;">https://cloudflare-ipfs.com/ipfs/bafybeidxyeug5275ptbhywsnihobwc7vszcabesvaq2geomab7o46zxdtq/flow.json</span><br><br><br>
+        <button class='btn' id="cid_popup_btn">Close</button>
+    </div>
+    <div id="ldcid_popup" style="display: none;padding:10px; position: absolute; top: 40%;left: 35%;width: 600px;height: 110px; background-color: #333; text-align: center;">
+        IPFS Cid:<input type="text" id="ldcid_text" style="font-weight: bold;margin:10px;background-color: #3f3f3f; color: white; font-size: 22px;" /><br><br>
+        <button class='btn' id="ldcid_popup_btn">Load</button>
+        <button class='btn' id="ldcid_popup_btnc">Close</button>
+    </div>
+    <div id="stos_popup" style="display: none; padding:10px; position: absolute; top: 25%;left: 35%;width: 600px;height: 150px; background-color: #333; text-align: center;">
+        <div style="margin-top: 10px;">
+            <div style="margin-top: 10px;">
+                    <span style="font-weight:bold;">Your flow registred sucessfully.</span></span><br>
+                    <p id="env_box" style="background-color: white;color: black; padding: 10px;">
+                        IPFS_CID=<br>
+                    </p>
+            </div>
+            <button class='btn' id="stos_popup_btn">Pay to start flow</button>
+            <button class='btn' id="stosc_popup_btn">Close</button>
+        </div>
+    </div>
+    <script>
+        $("#cid_popup_btn").click(()=>{
+            $("#cid_popup").css("display","none")
+        })
+        $("#ldcid_popup_btnc").click(()=>{
+            $("#ldcid_popup").css("display","none")
+        })
+        $("#stosc_popup_btn").click(()=>{
+            $("#stos_popup").css("display", "none")
+        })
+        $("#stos_popup_btn").click(async ()=>{
+            const amountToSend = web3.utils.toWei("2", "ether"); // Convert to wei value
+            var send = await web3.eth.sendTransaction({ from: window.account, to: "xdc9b81758701B19c2c58CeB69711697B1B8504eb47", value: amountToSend });
+        })
+        $("#ldcid_popup_btn").click(async ()=>{
+            $("#ldcid_popup").css("display","none")
+            $("#loader").css('display','block');
+            let cid = $("#ldcid_text").val()
+            //let flowJson = {"last_node_id":7,"last_link_id":9,"nodes":[{"id":5,"type":"math/condition","pos":[730,316],"size":[80,60],"flags":{},"order":3,"mode":0,"inputs":[{"name":"A","type":"number","link":6},{"name":"B","type":"number","link":7}],"outputs":[{"name":"true","type":"boolean","links":null},{"name":"false","type":"boolean","links":null}],"properties":{"A":1,"B":1,"OP":">"}},{"id":4,"type":"basic/const","pos":[385,515],"size":[180,30],"flags":{},"order":0,"mode":0,"outputs":[{"name":"value","type":"number","links":[7],"label":"100.000","slot_index":0}],"properties":{"value":100}},{"id":6,"type":"math/condition","pos":[807,598],"size":[80,60],"flags":{},"order":4,"mode":0,"inputs":[{"name":"A","type":"number","link":8},{"name":"B","type":"number","link":9}],"outputs":[{"name":"true","type":"boolean","links":null},{"name":"false","type":"boolean","links":null}],"properties":{"A":1,"B":1,"OP":"=="}},{"id":7,"type":"basic/const","pos":[454,660],"size":[180,30],"flags":{},"order":2,"mode":0,"outputs":[{"name":"value","type":"number","links":[9],"label":"20.000","slot_index":0}],"properties":{"value":20}},{"id":1,"type":"events/listen","pos":[122,277],"size":[500,120],"flags":{},"order":1,"mode":0,"outputs":[{"name":"dst","type":"string","links":null,"slot_index":0},{"name":"wad","type":"number","links":[6,8],"slot_index":1}],"properties":{"cvalue":"0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889","evalue":"Deposit","color":"blue"}}],"links":[[6,1,1,5,0,"number"],[7,4,0,5,1,"number"],[8,1,1,6,0,"number"],[9,7,0,6,1,"number"]],"groups":[],"config":{},"extra":{},"version":0.4};
+            let flowJson = await (await fetch(`https://cloudflare-ipfs.com/ipfs/${cid}/flow.json`)).json()
+            let outputFIlter = ["events/listen"]
+            let i=0;
+            for(let node of flowJson.nodes){
+                if(outputFIlter.includes(node.type)){
+                    node.outputs = []
+                    flowJson.nodes[i] = node;
+                }
+                i+=1;
+            }
+            window.graph.configure( flowJson );
+            $("#loader").css('display','none');
+        })
+    </script>
+    <script>
+        $( document ).ready(function() {
+            console.log( "document loaded" );
+            window.web3 = new window.Web3(window.ethereum);
+            window.ethereum.enable().then(()=>{
+                window.web3.eth.getAccounts().then((accounts)=>{
+                    window.account = accounts[0].replace("0x","xdc");
+                    web3.eth.getBalance(window.account).then((b)=>{
+                        $("#LGEditorTopBarSelector").html(`<span class='btn'>Welcome, ${window.account}</span><span class='btn' style="margin-left:10px;">Balance: ${parseFloat(web3.utils.fromWei(b)).toFixed(4)}</span>`)
+                    })
+                })
+            })
+        });
+    </script>
+</body>
+</html>
