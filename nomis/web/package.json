@@ -1,0 +1,32 @@
+{
+  "name": "nomis",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Denis Shutock <yo@shutock.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "chart.js": "^3.9.1",
+    "country-data-list": "^1.2.2",
+    "ethers": "^5.7.2",
+    "lottie-react": "^2.3.1",
+    "moment-timezone": "^0.5.39",
+    "next": "12.3.1",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
+    "react-dom": "18.2.0",
+    "react-hotkeys-hook": "^3.4.7",
+    "react-ipgeolocation": "^1.4.0",
+    "sass": "^1.55.0",
+    "swr": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "8.24.0",
+    "eslint-config-next": "12.3.1"
+  }
+}
