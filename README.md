@@ -18,6 +18,8 @@ Built under The XDC 2022 Hackathon
 
 [LATEST APP X.XX (Expo)](https://expo.dev/@jongan69/xdctind)
 
+[LATEST SWAGGER](https://xdc-de-fi-hackathon.vercel.app/)
+
 [LATEST CONTRACT X.XX (XDC Network)](https://remix.xinfin.network/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js)
 
 ------
