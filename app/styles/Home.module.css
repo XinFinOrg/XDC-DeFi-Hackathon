@@ -1,0 +1,11 @@
+.bg {
+    background-image: url('../assets/landing.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg2 {
+    background-image: url('../assets/dark.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

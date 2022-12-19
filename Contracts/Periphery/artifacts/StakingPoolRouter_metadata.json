@@ -1,0 +1,335 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "xdcWrapper",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_rtoken",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "WEXDC",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sToken",
+						"type": "address"
+					}
+				],
+				"name": "createPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getPoolAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getRewardEarned",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "rewardAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getStaked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "stakedAmount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "reedemReward",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "reedemRewardETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rtoken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "stake",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "stakeETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"stakeETH(uint256)": {
+					"notice": "wrap"
+				},
+				"withdrawETH(uint256)": {
+					"notice": "unWrap"
+				}
+			},
+			"notice": "Staking is done so in case of Emergency , 50% of the amount locked can be used for covering The Reward Token can be used to pay gas fees for the Exchange and other DEFI activities in the future",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Periphery/StakingPoolRouter.sol": "StakingPoolRouter"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Core/interfaces/IStakingPool.sol": {
+			"keccak256": "0x2d3270afd6df32fec0f7bfafc2ffaf9648439a53e20d677a34292aecc2d4cba6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2f4d71083c7e0f2a78cba378ef8d2212179de5163cd378ec1ec91e18779b4f23",
+				"dweb:/ipfs/QmU2uVCiL5XrSSQ2Mbz1etxrh9NMuGbSXSQNuoAdsM833N"
+			]
+		},
+		"Core/interfaces/IStakingPoolFactory.sol": {
+			"keccak256": "0xb54056e296b36355a09b4805f52a24ba4694dca55acb4690942b530b57482109",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d989211be46cfabc18f071385e6a50ee7b5e115818162d97d7386e56df7a3a38",
+				"dweb:/ipfs/QmYTNwYzKwyHubhdyTiTg6Gd85kMiQaajyHPaFC8Dtr1hY"
+			]
+		},
+		"Other/interfaces/IERC20.sol": {
+			"keccak256": "0xcdb6951e91d0eaa982638d567e2c8ac7d30f897b16bde3c2fdc2f4b4c51e70cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e178943d13ed601f19566c4da0e97a1141ea059cf843f9dfacecff0ab59d9c9",
+				"dweb:/ipfs/QmatLN2SZ7LVgchYqugBPxXTqnH4ujK2TtPZY2v7zuMhpB"
+			]
+		},
+		"Other/interfaces/IXDC.sol": {
+			"keccak256": "0x56bccdbe5f98debf67f9ee5da33f3edb0c9d399d3afdde39360c1b9c175e5c87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62225d1c39a2020f29b5961666e558e623577ff7a7fa5e7e4b7335a82d9c4bea",
+				"dweb:/ipfs/QmNczddd4QeR3apeKq6fyjLH3nrnD66ucSPzNsvES3kxD1"
+			]
+		},
+		"Periphery/StakingPoolRouter.sol": {
+			"keccak256": "0x25e700220e5d9d55705b74a7ba6b0b92a2ea4bbfd0decaf8b87b1a007955c9b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cd29b627a86a9cabe27681060deae091aceef82a0a54b0eb31c9253a0e0866ec",
+				"dweb:/ipfs/QmYvpLdRmkEvZmUPJ3idi1QzYLsM8uFsUW5nF4vgWM82zV"
+			]
+		},
+		"Periphery/libraries/TransferHelper.sol": {
+			"keccak256": "0x77467c316bff19a25ac7ed3488034befac5dc35d8cbf916e614978fe83f2a1d7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c96d05d3f0c67f6abdc39aecf8dd20a98227bb6c618d8625829a8142ade9a450",
+				"dweb:/ipfs/Qmdm7FCMuSp5DurUtw3xxjJsRZBPbu1HCxhKDT9uRvFBpi"
+			]
+		}
+	},
+	"version": 1
+}

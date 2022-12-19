@@ -1,0 +1,434 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_factory",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "xdcWrapper",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "WEXDC",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "borrowETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "borrowToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "createPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "depositETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "depositToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "factory",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getBorrowAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getLendAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getPoolAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "repayAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "getRepayAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "withdrawAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "getWithdrawAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "repayETH",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "repayToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawETH",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"borrowToken(address,uint256)": {
+					"notice": "done and working"
+				},
+				"depositETH(uint256)": {
+					"notice": "done and working"
+				},
+				"depositToken(address,uint256)": {
+					"notice": "done and working"
+				},
+				"getRepayAmount(address,address,uint256)": {
+					"notice": "repay Amount quote with interest"
+				},
+				"getWithdrawAmount(address,address,uint256)": {
+					"notice": "withdraw amount quote with interest"
+				},
+				"repayETH(uint256)": {
+					"notice": "send ETH > repay Amount taking into time considerartion"
+				},
+				"repayToken(address,uint256)": {
+					"notice": "done and working"
+				},
+				"withdrawToken(address,uint256)": {
+					"notice": "done and working"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Periphery/LendingPoolRouter.sol": "LendingPoolRouter"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Core/interfaces/ILendingPool.sol": {
+			"keccak256": "0x8334a278523bd092b257053743ee1e60fbf6bcc12bbc125f95dd9b6f95ee505f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ac68cada74aa39acc66542388dada2102f0f4b8e1c4542bfef550aac85ed2225",
+				"dweb:/ipfs/QmbejVVZo5jThX5xLsM691LAWjxsVV6MspB23ibYtGWyBy"
+			]
+		},
+		"Core/interfaces/ILendingPoolFactory.sol": {
+			"keccak256": "0x21a5d554f25921f532ee452e8bfaa14b87ef5037fa13dde132aa01b009e84af0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b49e21637ce0c0aacc42236c79ebce07ff3ebe62e1b69ae56022b7d7933f882f",
+				"dweb:/ipfs/QmcH4VuFwCXdyf2v8jKN3zbVEtELgnhRr2ugnXUfRyyMXf"
+			]
+		},
+		"Other/interfaces/IERC20.sol": {
+			"keccak256": "0xcdb6951e91d0eaa982638d567e2c8ac7d30f897b16bde3c2fdc2f4b4c51e70cd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2e178943d13ed601f19566c4da0e97a1141ea059cf843f9dfacecff0ab59d9c9",
+				"dweb:/ipfs/QmatLN2SZ7LVgchYqugBPxXTqnH4ujK2TtPZY2v7zuMhpB"
+			]
+		},
+		"Other/interfaces/IXDC.sol": {
+			"keccak256": "0x56bccdbe5f98debf67f9ee5da33f3edb0c9d399d3afdde39360c1b9c175e5c87",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://62225d1c39a2020f29b5961666e558e623577ff7a7fa5e7e4b7335a82d9c4bea",
+				"dweb:/ipfs/QmNczddd4QeR3apeKq6fyjLH3nrnD66ucSPzNsvES3kxD1"
+			]
+		},
+		"Periphery/LendingPoolRouter.sol": {
+			"keccak256": "0x07c36730b061274602eac0a410f2936a8d7b82864408057de7b05312ab86a1db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7b22ced4040f82a5b34e5994bc2377daea8450bd4a99773855359506b3b2ead1",
+				"dweb:/ipfs/QmPb5nViumYdZ6iHTDuDAUSV87GK3Nxav3YuHXqzjhDKgQ"
+			]
+		},
+		"Periphery/libraries/TransferHelper.sol": {
+			"keccak256": "0x77467c316bff19a25ac7ed3488034befac5dc35d8cbf916e614978fe83f2a1d7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c96d05d3f0c67f6abdc39aecf8dd20a98227bb6c618d8625829a8142ade9a450",
+				"dweb:/ipfs/Qmdm7FCMuSp5DurUtw3xxjJsRZBPbu1HCxhKDT9uRvFBpi"
+			]
+		}
+	},
+	"version": 1
+}
