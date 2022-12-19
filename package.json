@@ -1,0 +1,54 @@
+{
+  "name": "dapp-react-solidity-xdc3",
+  "version": "1.0.0",
+  "description": "Dapp Sample Implementation using npm package react-solidity-xdc3",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npx hardhat run scripts/deploy.js ",
+    "deployTemp": "npx hardhat run scripts/Temp.js ",
+    "build": "rollup -c",
+    "test": "NODE_ENV=test hardhat test"
+  },
+  "keywords": [
+    "Goplugin",
+    "solidity",
+    "PluginOnXDC",
+    "xdc3",
+    "react",
+    "hardhat",
+    "Decentralized Application",
+    "XDC Network",
+    "EVM Compatible",
+    "Ethereum",
+    "Polygon",
+    "Xinfin"
+  ],
+  "author": {
+    "name": "Logeswaran A(@GoPlugin)",
+    "username": "LogeswaranA"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "builtin-modules": "^3.2.0",
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1",
+    "create-react-app": "^4.0.2",
+    "defender-autotask-client": "^1.4.1",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.2",
+    "ethers": "^5.0.30",
+    "hardhat": "^2.0.8",
+    "rollup": "^2.38.5"
+  },
+  "dependencies": {
+    "@goplugin/contracts": "^0.0.2",
+    "@openzeppelin/contracts": "^4.6.0",
+    "eth-sig-util": "^3.0.1",
+    "express": "^4.17.3"
+  }
+}

@@ -1,0 +1,1179 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/lokesh/projects/xSynProject/contracts/ExchangeRate.sol": {
+      "lastModificationDate": 1671132495448,
+      "contentHash": "d1db037b2759b1dcae2d6054c5778168",
+      "sourceName": "contracts/ExchangeRate.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@goplugin/contracts/src/v0.8/PluginClient.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExchangeRate"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/PluginClient.sol": {
+      "lastModificationDate": 1669811882003,
+      "contentHash": "6d67c42dd62ea452eddc890d23711aef",
+      "sourceName": "@goplugin/contracts/src/v0.8/PluginClient.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Plugin.sol",
+        "./interfaces/ENSInterface.sol",
+        "./interfaces/PliTokenInterface.sol",
+        "./interfaces/OperatorInterface.sol",
+        "./interfaces/PointerInterface.sol",
+        "./vendor/ENSResolver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PluginClient"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/Plugin.sol": {
+      "lastModificationDate": 1669811882000,
+      "contentHash": "50390704447c596ea462934e03ca5995",
+      "sourceName": "@goplugin/contracts/src/v0.8/Plugin.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./vendor/CBORPlugin.sol",
+        "./vendor/BufferPlugin.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Plugin"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/ENSInterface.sol": {
+      "lastModificationDate": 1669811882020,
+      "contentHash": "a39b4d75f49525e15b89b9ddf21d2a0a",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/ENSInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ENSInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/PliTokenInterface.sol": {
+      "lastModificationDate": 1669811882021,
+      "contentHash": "c091b1d1150eb2dbac99ea024391854f",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/PliTokenInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PliTokenInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/OperatorInterface.sol": {
+      "lastModificationDate": 1669811882023,
+      "contentHash": "05e1e323b1c33c5e9909251a2d766ced",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/OperatorInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./OracleInterface.sol",
+        "./PluginRequestInterface.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OperatorInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/PointerInterface.sol": {
+      "lastModificationDate": 1669811882019,
+      "contentHash": "854cad5f6a83dfa483bf2a8361a09581",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/PointerInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PointerInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/vendor/ENSResolver.sol": {
+      "lastModificationDate": 1669811882018,
+      "contentHash": "fd2637eac39eddb4a6a95958f2b994f8",
+      "sourceName": "@goplugin/contracts/src/v0.8/vendor/ENSResolver.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ENSResolver"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/vendor/CBORPlugin.sol": {
+      "lastModificationDate": 1669811882017,
+      "contentHash": "1b529f7ade364450b042eab929e02211",
+      "sourceName": "@goplugin/contracts/src/v0.8/vendor/CBORPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BufferPlugin.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.19"
+      ],
+      "artifacts": [
+        "CBORPlugin"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/vendor/BufferPlugin.sol": {
+      "lastModificationDate": 1669811882017,
+      "contentHash": "39aaccd30d65d3dad09110fcc57c5c2d",
+      "sourceName": "@goplugin/contracts/src/v0.8/vendor/BufferPlugin.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BufferPlugin"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/OracleInterface.sol": {
+      "lastModificationDate": 1669811882023,
+      "contentHash": "c234573262b01e8e315ef222f86774aa",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/OracleInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OracleInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@goplugin/contracts/src/v0.8/interfaces/PluginRequestInterface.sol": {
+      "lastModificationDate": 1669811882026,
+      "contentHash": "ecde989f96a219ae73a1701b68f580bc",
+      "sourceName": "@goplugin/contracts/src/v0.8/interfaces/PluginRequestInterface.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PluginRequestInterface"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/interfaces/IAddressResolver.sol": {
+      "lastModificationDate": 1669811950236,
+      "contentHash": "8b11e4a6e025455b81a593722249acb3",
+      "sourceName": "contracts/interfaces/IAddressResolver.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAddressResolver"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/interfaces/IExchangeRate.sol": {
+      "lastModificationDate": 1671132542037,
+      "contentHash": "da8980b07014d60f0f7023e67d88154b",
+      "sourceName": "contracts/interfaces/IExchangeRate.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IExchangeRate"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XSynProtocol.sol": {
+      "lastModificationDate": 1671449417206,
+      "contentHash": "4625deaceac1cc10da3eb2a2c4666e9a",
+      "sourceName": "contracts/XSynProtocol.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IExchangeRate.sol",
+        "./interfaces/IXDUSDCore.sol",
+        "./AddressResolver.sol",
+        "./utils/Constants.sol",
+        "./utils/SafeDecimalMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "XSynProtocol"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/interfaces/IXDUSDCore.sol": {
+      "lastModificationDate": 1669811950236,
+      "contentHash": "a012da3107b837cd152052a5c1a30cbc",
+      "sourceName": "contracts/interfaces/IXDUSDCore.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXDUSDCore"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/utils/Constants.sol": {
+      "lastModificationDate": 1669811950223,
+      "contentHash": "cbfb9f214e98ba63ad395d6a6d0ac6c6",
+      "sourceName": "contracts/utils/Constants.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Constants"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/utils/SafeDecimalMath.sol": {
+      "lastModificationDate": 1669811950222,
+      "contentHash": "ccafb2b21c598b0f1abfebdf70674632",
+      "sourceName": "contracts/utils/SafeDecimalMath.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeDecimalMath",
+        "SafeMath"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/utils/Owned.sol": {
+      "lastModificationDate": 1670867848489,
+      "contentHash": "9eb8655c03e622c2acffbed401caa909",
+      "sourceName": "contracts/utils/Owned.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Owned"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/utils/TokenState.sol": {
+      "lastModificationDate": 1670867848490,
+      "contentHash": "e8ec2d82f5ad0d024ba49758bb338071",
+      "sourceName": "contracts/utils/TokenState.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Owned.sol",
+        "./State.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TokenState"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/utils/State.sol": {
+      "lastModificationDate": 1671094847016,
+      "contentHash": "54d35a7e16d6ef465459b52642641874",
+      "sourceName": "contracts/utils/State.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Owned.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "State"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XDUSDCore.sol": {
+      "lastModificationDate": 1669811950237,
+      "contentHash": "a1c6b59ef4fa3bc58289a91ce01f74c6",
+      "sourceName": "contracts/XDUSDCore.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./XRC20/XRC20.sol",
+        "./utils/State.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "XDUSDCore"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XRC20/XRC20.sol": {
+      "lastModificationDate": 1670867848491,
+      "contentHash": "89d3bfec45ad970a1939f7b7f1de7d5b",
+      "sourceName": "contracts/XRC20/XRC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IXRC20.sol",
+        "./extensions/IXRC20Metadata.sol",
+        "./utils/context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "XRC20"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XRC20/IXRC20.sol": {
+      "lastModificationDate": 1669811950227,
+      "contentHash": "7eeda83a5121293798368d17ea5b0abd",
+      "sourceName": "contracts/XRC20/IXRC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXRC20"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XRC20/extensions/IXRC20Metadata.sol": {
+      "lastModificationDate": 1669811950230,
+      "contentHash": "0dfa224ce59b7d8aff7f6f0257fd17c9",
+      "sourceName": "contracts/XRC20/extensions/IXRC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IXRC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXRC20Metadata"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XRC20/utils/context.sol": {
+      "lastModificationDate": 1669811950228,
+      "contentHash": "9816ad78dfe749a2c200a02455a865b2",
+      "sourceName": "contracts/XRC20/utils/context.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/AddressResolver.sol": {
+      "lastModificationDate": 1671218361964,
+      "contentHash": "a7b72263d705d99739d3967f4ec6e074",
+      "sourceName": "contracts/AddressResolver.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AddressResolver"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1669811881184,
+      "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/XSynExchange.sol": {
+      "lastModificationDate": 1671459004183,
+      "contentHash": "9954782bdb0744b97b157ffa12e99d4e",
+      "sourceName": "contracts/XSynExchange.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IExchangeRate.sol",
+        "./interfaces/IXsynExec.sol",
+        "./interfaces/IXsynProtocol.sol",
+        "./interfaces/IXDUSDCore.sol",
+        "./AddressResolver.sol",
+        "./utils/Constants.sol",
+        "./utils/SafeDecimalMath.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/utils/Counters.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "XSynExchange"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/interfaces/IXsynExec.sol": {
+      "lastModificationDate": 1671456278335,
+      "contentHash": "2748803e7259526c68b368830eb3274c",
+      "sourceName": "contracts/interfaces/IXsynExec.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXsynExec"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/interfaces/IXsynProtocol.sol": {
+      "lastModificationDate": 1671387765866,
+      "contentHash": "2ff8041e37242a8ddfa7453f74e9693a",
+      "sourceName": "contracts/interfaces/IXsynProtocol.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IXsynProtocol"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
+      "lastModificationDate": 1669811881228,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "/Users/lokesh/projects/xSynProject/contracts/Assets/SyntheticAssets.sol": {
+      "lastModificationDate": 1671436294009,
+      "contentHash": "8fbdff4393d7773f5a2853e9a4a5acd8",
+      "sourceName": "contracts/Assets/SyntheticAssets.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../XRC20/XRC20.sol",
+        "../utils/State.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SyntheticAssets"
+      ]
+    }
+  }
+}
