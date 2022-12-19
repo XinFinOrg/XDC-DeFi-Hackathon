@@ -1,0 +1,30 @@
+.historyContainer {
+    width: 100%;
+    border: 2px solid #3a3f50;
+    border-radius: 10px;
+    color: white;
+}
+
+.historyWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.account {
+    border-radius: 50%; 
+    overflow: hidden; 
+    padding: 0px; 
+    margin: 0px; 
+    width: 60px; 
+    height: 60px; 
+    display: inline-block; 
+    background-color: rgb(199, 20, 76);
+}

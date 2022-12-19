@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HelpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Normal Force"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/tv2"
+            />
+
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2"
+            android:id="@+id/ytPlayer2"
+            android:layout_marginTop="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In mechanics, the normal force F is that component of the contact force that is perpendicular to the surface that an object contacts. For example, the surface of a floor or table that prevents an object from falling. In this instance normal is used in the geometric sense and means perpendicular, as opposed the common language use of normal meaning common or expected. For example, a person standing still on flat ground is supported by a ground reaction force that consists of only a normal force. If the person stands on a slope and does not slide down it, then the total ground reaction force can be divided into two components: a normal force perpendicular to the ground and a frictional force parallel to the ground. In another common situation, if an object hits a surface with some speed, and the surface can withstand it, the normal force provides for a rapid deceleration, which will depend on the flexibility of the surface and the object."
+            android:layout_below="@id/ytPlayer2"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:id="@+id/tv3"/>
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/tv3"
+            android:id="@+id/wikiBounce"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#2dda61"
+            fancy:fb_focusColor="#9bd823"
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            />
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/wikiBounce"
+            android:id="@+id/wikiFreefall"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_borderColor="#FFFFFF"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#2dda61"
+            fancy:fb_focusColor="#9bd823"
+            fancy:fb_iconPosition="left"
+            fancy:fb_radius="30dp"
+            />
+
+
+    </RelativeLayout>
+
+</ScrollView>

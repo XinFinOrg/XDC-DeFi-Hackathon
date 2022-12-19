@@ -1,0 +1,44 @@
+.navbardefault {
+    position: fixed;
+    /* display:flex; */
+    /* align-items: center; */
+    /* padding: 16px 24px; */
+    background-color: black;
+    width: 100%;
+    color: white;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+    /* justify-content: center; */
+}
+
+.badgeMenu {
+    padding: 0px 24px;
+}
+
+.listMenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.linkActive {
+    padding: 16px 24px;
+    background-color: #242735;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.linkNonActive {
+    padding: 16px 24px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+
+}

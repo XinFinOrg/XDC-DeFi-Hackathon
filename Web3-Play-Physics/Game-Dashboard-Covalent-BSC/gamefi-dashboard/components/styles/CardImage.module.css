@@ -1,0 +1,18 @@
+.cardImageContainer {
+    width: 100%;
+    border: 2px solid #3a3f50;
+    border-radius: 10px;
+    color: white;
+}
+
+.detailImage {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .detailImage {
+        padding: 80px;
+    }
+}

@@ -1,0 +1,37 @@
+.cardContainer {
+    width: 100%;
+    border: 2px solid #3a3f50;
+    border-radius: 10px;
+    color: white;
+}
+
+.cardBody {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    padding: 24px;
+}
+
+.kpi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleKpi {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.number{
+    font-size: 25px;
+}
+
+.symbol {
+    font-size: 14px;
+    color: #a1a6b6;
+}
+
+.numberUSD {
+    font-size: 15px;
+}
