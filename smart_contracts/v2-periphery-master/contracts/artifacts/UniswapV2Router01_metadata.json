@@ -784,7 +784,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"CONTRACT/v2-periphery-master/contracts/UniswapV2Router01.sol": "UniswapV2Router01"
+			"periphery_contracts/UniswapV2Router01.sol": "UniswapV2Router01"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -819,46 +819,46 @@
 				"dweb:/ipfs/QmayKQWJgWmr46DqWseADyUanmqxh662hPNdAkdHRjiQQH"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/UniswapV2Router01.sol": {
+		"periphery_contracts/UniswapV2Router01.sol": {
 			"keccak256": "0xd8564b6ac4988ecdd089d7690e4b9be994652d9129ce1fe33e4ea08205507029",
 			"urls": [
 				"bzz-raw://f3f096f563e247bcea798373dec8a6f694b2240253b85767aa7437b24e4209fd",
 				"dweb:/ipfs/QmUUEuVboBqC82TPRUQ7AGLLYc6XR5rztZpmAADNPTLDNs"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/interfaces/IERC20.sol": {
+		"periphery_contracts/interfaces/IERC20.sol": {
 			"keccak256": "0xa791b279660ee5eb66ebd4f23b539055d178ae24677f3a164567441ecfdcf73a",
 			"urls": [
 				"bzz-raw://06f36f585a8b82eb388ccccc4e8c483718a99a07f5f12d3217afc254ab139a68",
 				"dweb:/ipfs/Qmedr3aAH6F3ZTgZJ3enoP92ZD8yNwiCStwtGknNXhiK8v"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/interfaces/IUniswapV2Router01.sol": {
+		"periphery_contracts/interfaces/IUniswapV2Router01.sol": {
 			"keccak256": "0x608b42c9eb8629e4b4b2fba437c62be48cee8ab920bf1cecb0b212aa00342403",
 			"urls": [
 				"bzz-raw://c9a7613abdbf51b774b4c90a043c55d5c9145121d54d2e6bd32cdc38491e9249",
 				"dweb:/ipfs/QmUudeJSPyuqm6bJWmfqtvo7jMYfa8yqPKF1p8eP8QE5cX"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/interfaces/IWETH.sol": {
+		"periphery_contracts/interfaces/IWETH.sol": {
 			"keccak256": "0x25ed8b4dd0b9382d61501d7fe6f30ea65e6800907ba4a5a0f280e79c80bdfd86",
 			"urls": [
 				"bzz-raw://72c047f1ad25724c269cfb87f9291558a2723d90ef8b25224caf84e04123a52f",
 				"dweb:/ipfs/QmXjW9nmRTasWKYGMnQRBGRHJg2AbT6Z4azWowuST1bLu3"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/libraries/SafeMath.sol": {
+		"periphery_contracts/libraries/SafeMath.sol": {
 			"keccak256": "0xded2f1823779fd511638cc079b2ff552b51dd6154091b240488d9cbcedfcebac",
 			"urls": [
 				"bzz-raw://a186f7cfe1a13f932c69057f40a58c8e34e78c7afc670cb742a22cb6223a7dd7",
 				"dweb:/ipfs/QmTcfdX5KoJTEbgp3nuP1vNwcyjef1HH9LALzRzsAMmSAN"
 			]
 		},
-		"CONTRACT/v2-periphery-master/contracts/libraries/UniswapV2Library.sol": {
-			"keccak256": "0x2006e83f9fbfb2d83b5cfcecb2d4f0068b677b30d94a8ca362c1792acaba8635",
+		"periphery_contracts/libraries/UniswapV2Library.sol": {
+			"keccak256": "0x2b6a058656d3bf832fd59bd26a2f0ebad44c617c2effcebcce1f302b4bfbff18",
 			"urls": [
-				"bzz-raw://8b66f654183bcf06f1d6b607154fb7c186903da550fcaf92240b26bf55088670",
-				"dweb:/ipfs/QmPETP9nLCB5eWNE6pbCj2n9uBxMkkxbFpD3WE3TtSJTph"
+				"bzz-raw://9126bbb5c4e0d4d1a74195a58e1d1bd2c692887fd62dfbdf2bd15a5fdf2256d8",
+				"dweb:/ipfs/QmaVJ2EPm6cGx1stmWr3icaoBzQJ1kGdM3XcpECXcEZxKF"
 			]
 		}
 	},
