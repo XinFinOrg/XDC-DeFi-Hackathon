@@ -10,6 +10,7 @@ export const store = configureStore({
     login: loginReducer,
     wallet: walletReducer,
     // Demonstrates Async Thunk
+    // This could be your issue w redux
     users: usersReducer,
   }
 }); 
