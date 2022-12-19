@@ -1,4 +1,4 @@
-# XDCTind - Mint Matches on the XDC Network
+# GETTRDONE: WEB3 ToDo List App - XDC Defi Hackathon Submission
 
 [![CodeQL](https://github.com/jongan69/xdctind/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jongan69/xdctind/actions/workflows/codeql-analysis.yml)
 
