@@ -4,7 +4,7 @@
 
 - React Native
 - Solidity Contract ABI usage
-- `web` directory w/ Nextjs thirdwebjs sdk
+- `web` directory w/ Nextjs Swagger API Documentation
 - Web3 Auth SDK
 - Nhost SDK
 
