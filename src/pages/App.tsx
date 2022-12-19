@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Div from '../components/Common/Div';
-import { Footer } from '../components/Footer';
 import Header from '../components/Header';
 import PageLoading from '../components/PageLoading';
 import Web3ReactManager from '../components/Web3ReactManager';
@@ -38,7 +37,6 @@ function App() {
             </Div>
           </Suspense>
         </Div>
-        <Footer />
       </BrowserRouter>
     </Web3ReactManager>
   );
