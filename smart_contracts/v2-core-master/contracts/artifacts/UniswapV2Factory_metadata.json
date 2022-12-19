@@ -1,0 +1,344 @@
+{
+	"compiler": {
+		"version": "0.5.16+commit.9c3226ce"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_feeToSetter",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token0",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "token1",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "PairCreated",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "INIT_CODE_HASH",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allPairs",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "allPairsLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenA",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenB",
+						"type": "address"
+					}
+				],
+				"name": "createPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "feeTo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "feeToGrowth",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "feeToSetter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "getPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_feeTo",
+						"type": "address"
+					}
+				],
+				"name": "setFeeTo",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_feeToSetter",
+						"type": "address"
+					}
+				],
+				"name": "setFeeToSetter",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_feeToGrowth",
+						"type": "address"
+					}
+				],
+				"name": "setfeeToGrowth",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"core_contracts/UniswapV2Factory.sol": "UniswapV2Factory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"core_contracts/UniswapV2ERC20.sol": {
+			"keccak256": "0x9e97cd87ee276a04cd2513ce44d14f4bed5897a66bd961c29cf5028346c0a9a4",
+			"urls": [
+				"bzz-raw://f4ae66d3b8e56c0dc4cc2f3c8e6408f7556c672d9585b93a02a35acd714d03b3",
+				"dweb:/ipfs/QmRB6kGsHvEy7c7CvzRjik33154cEzkwABozjNcTcQvJMP"
+			]
+		},
+		"core_contracts/UniswapV2Factory.sol": {
+			"keccak256": "0x3d78b29baf1f1756ac98994db7fd7376aea48c9a354706c056bd4cf4301b0df4",
+			"urls": [
+				"bzz-raw://51cf8d72aac73447d800829346f6fe010b6aedebb46c089b3334ca8388384ebc",
+				"dweb:/ipfs/QmWkY1gBiWzaut3TkFbsTRuT2CssEFvCuyGdXtdUbaEya1"
+			]
+		},
+		"core_contracts/UniswapV2Pair.sol": {
+			"keccak256": "0x75512bc780a47d83270e477e64422e3b3ee2f6fba4bcdc53a7b789a62d68da23",
+			"urls": [
+				"bzz-raw://c2981e4e17453114f582a766eb27d424924ad7325ed6c4f8e02ddd5d5638d50d",
+				"dweb:/ipfs/QmYsWqcR1SLUFY6X1MsGhjntBdnuNyrYmVXunwdHxi2K73"
+			]
+		},
+		"core_contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xa791b279660ee5eb66ebd4f23b539055d178ae24677f3a164567441ecfdcf73a",
+			"urls": [
+				"bzz-raw://06f36f585a8b82eb388ccccc4e8c483718a99a07f5f12d3217afc254ab139a68",
+				"dweb:/ipfs/Qmedr3aAH6F3ZTgZJ3enoP92ZD8yNwiCStwtGknNXhiK8v"
+			]
+		},
+		"core_contracts/interfaces/IUniswapV2Callee.sol": {
+			"keccak256": "0x514f1fef54c3ec96f0a9b4fbf4980ad71e8ffb237cfc8e872f18ad5d7a199cac",
+			"urls": [
+				"bzz-raw://33ea4f734ba9e3435cda61424cd7ed392d4b915b5fba33e8625807b08c6b9f77",
+				"dweb:/ipfs/QmfSZ3J1ZJHfdX1RUFc3sKn4vpWJRBpaJnvLTgQLUsggcQ"
+			]
+		},
+		"core_contracts/interfaces/IUniswapV2ERC20.sol": {
+			"keccak256": "0xda3ed72159ac8321b9ee8b67893e0d42ac6f8180b8e1112e8724a9093a409541",
+			"urls": [
+				"bzz-raw://db4c5c04309ae947a14a464f22f37b76225749248eff9a6a9e184f314531533e",
+				"dweb:/ipfs/QmaNHx4uQ79xhQ3SgCK4NodQR11oc4DRtkPGLqGSpB7jei"
+			]
+		},
+		"core_contracts/interfaces/IUniswapV2Factory.sol": {
+			"keccak256": "0x6771f018e8c4bcd0af7be64d4bd8e866ea9f046939f113318e97c9f2bbd4acc2",
+			"urls": [
+				"bzz-raw://ba2c4d2a3e06107e0e0a7327200242006615e53523ea70431ebfb2955eedc6bf",
+				"dweb:/ipfs/QmYPZwv1hXHr7vwuXvwNrpH2kVWEEcwfaeZUCYf2PBsWKk"
+			]
+		},
+		"core_contracts/interfaces/IUniswapV2Pair.sol": {
+			"keccak256": "0x6e301cd1c669825e95796a549af46ea9214abad484a2d687c9a8f4d3953457af",
+			"urls": [
+				"bzz-raw://1de1663b461dd369ecf043124025f4ce78fe281d6e972180012423584b9bb1ed",
+				"dweb:/ipfs/QmNfYrPwNekvVs8nJLXp9v2b5AUMNUm7T7nNd9xdqozX7L"
+			]
+		},
+		"core_contracts/libraries/Math.sol": {
+			"keccak256": "0x59371bbb24653eabdec42dd004bc94c70536bd655b007b3175c89561597b258b",
+			"urls": [
+				"bzz-raw://a17afc98200f4dacc7a1b15adcdc6515abfbf42d78354d530e9df5966c301976",
+				"dweb:/ipfs/QmeNz4PfMKN2nAmNxSBqVrWw6g1b3EpRa4ZuDpHq7kafh7"
+			]
+		},
+		"core_contracts/libraries/SafeMath.sol": {
+			"keccak256": "0xfe46a92953b0ebf82fc2a9f21f995beb60e845aaa7223bfb37711a3b41d6dc11",
+			"urls": [
+				"bzz-raw://06272423f21f7b375d85d3d4c0cb280a278b1f7f312af2bf002278e16bf48432",
+				"dweb:/ipfs/QmXGGm8wvt8pZu2ob1HFk8qLTRATasvomjkaYBvcH3qU57"
+			]
+		},
+		"core_contracts/libraries/UQ112x112.sol": {
+			"keccak256": "0xe3bebc29aac628026f0eb6d0dd10d463b0b796fadfa0a1cfad1ae603c7d56539",
+			"urls": [
+				"bzz-raw://64b8a2f0b01eb74df50a00182874db88b10104deb8aa51f9125ac138cf394b89",
+				"dweb:/ipfs/QmUYuj73nr6hxK5xmHdsq7wQjHuLC9iH6c89pcn9pDPhLF"
+			]
+		}
+	},
+	"version": 1
+}
