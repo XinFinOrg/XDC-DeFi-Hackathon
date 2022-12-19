@@ -20,7 +20,7 @@ export default function CustomSwitch({
       style={{
         height: 44,
         width: 350,
-        backgroundColor: colors?.secondary,
+        backgroundColor: colors?.primary,
         borderRadius: 10,
         borderColor: "#000",
         flexDirection: "row",
@@ -33,7 +33,7 @@ export default function CustomSwitch({
         style={{
           flex: 1,
           backgroundColor:
-            getSelectionMode == 1 ? colors.primary : colors.secondary,
+            getSelectionMode == 1 ? colors.primary : colors.card,
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
@@ -41,7 +41,7 @@ export default function CustomSwitch({
       >
         <Text
           style={{
-            color: getSelectionMode == 1 ? colors.textDark : colors.textLight,
+            color: colors.text,
             fontSize: 14,
             fontFamily: "Roboto-Medium",
           }}
@@ -55,7 +55,7 @@ export default function CustomSwitch({
         style={{
           flex: 1,
           backgroundColor:
-            getSelectionMode == 2 ? colors.primary : colors.secondary,
+            getSelectionMode == 2 ? colors.primary : colors.card,
           borderRadius: 10,
           justifyContent: "center",
           alignItems: "center",
@@ -63,7 +63,7 @@ export default function CustomSwitch({
       >
         <Text
           style={{
-            color: getSelectionMode == 2 ? colors.textDark : colors.textLight,
+            color: colors.text,
             fontSize: 14,
             fontFamily: "Roboto-Medium",
           }}

@@ -1,7 +1,7 @@
 // These are really bad
 
 const tintColorLight = "#eb9797";
-const tintColorDark = "#000";
+const tintColorDark = "#eb9797";
 
 export default {
   defaultTheme: {
