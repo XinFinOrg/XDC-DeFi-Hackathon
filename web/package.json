@@ -1,24 +1,39 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "postbuild": "cpy 'models/**/*.swagger.yaml' public/openapi --flat",
+    "dev": "next dev",
+    "openapi:yaml": "typeconv -f ts -t oapi --oapi-format yaml --output-extension 'swagger.yaml' --output-directory 'models/openapi' 'models/*.ts'",
+    "start": "next start"
   },
   "dependencies": {
-    "@thirdweb-dev/auth": "^1",
-    "@thirdweb-dev/react": "^3",
-    "@thirdweb-dev/sdk": "^3",
-    "cookie": "^0.5.0",
-    "ethers": "^5.6.8",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@stoplight/elements": "7.7.7",
+    "@xstyled/styled-components": "3.7.0",
+    "@xstyled/system": "3.7.0",
+    "isarray": "2.0.5",
+    "next": "13.0.6",
+    "next-swagger-doc": "0.3.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "styled-components": "5.3.6",
+    "swagger-ui-react": "latest"
   },
   "devDependencies": {
-    "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0"
+    "@trivago/prettier-plugin-sort-imports": "4.0.0",
+    "@types/node": "18.11.13",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.9",
+    "@types/swagger-jsdoc": "6.0.1",
+    "@typescript-eslint/eslint-plugin": "5.46.0",
+    "cpy-cli": "4.2.0",
+    "eslint": "8.29.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-next": "13.0.6",
+    "eslint-plugin-react": "7.31.11",
+    "prettier": "2.8.1",
+    "typeconv": "1.8.0",
+    "typescript": "4.9.4"
   }
 }

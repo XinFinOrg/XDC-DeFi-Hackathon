@@ -6,7 +6,7 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "cd ./web && yarn next start",
+    "web": "cd ./web && yarn dev",
     "compile-contract-v1": "solcjs --bin --include-path node_modules/ --base-path . --output-dir ./contracts/artifacts --abi --pretty-json ./contracts/FavorsV2.sol",
     "compile-contracts": "node compile.js",
     "webdev": "cd ./web && yarn next dev",

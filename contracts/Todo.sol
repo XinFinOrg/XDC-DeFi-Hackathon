@@ -1,6 +1,7 @@
 // Todo App Task Contract
+// SPDX-Licens-Identifier: UNLICENSED
 
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.7;
 
 contract TaskContract {
     event AddTask(address recipient, uint256 taskId);
