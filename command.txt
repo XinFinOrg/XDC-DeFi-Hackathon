@@ -1,0 +1,4 @@
+npm install web3modal @metamask/detect-provider @walletconnect/web3-provider ethers --save
+
+
+XDC Pay ID:- 78640a74036794a5b7f8ea501887c168232723696db4231f54abd3fe524037b4
