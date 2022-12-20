@@ -1,0 +1,230 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #261d64;
+  
+}
+.button-container {
+ 
+  padding-top: 0px;
+  transform: translate(0%, 0%);
+display: flex;
+align-items: center;
+justify-content: center;
+align-self: center;
+
+ 
+}
+
+.header .button-container{
+  padding-right: 30px;
+}
+
+.input{
+  background-color: #1e1c3d;
+}
+
+.fixinputae{
+  width: 80%;
+  height: 110px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+
+    
+
+
+  
+}
+
+
+
+input[type=number]{
+  height: 30%;
+  
+  align-self: center;
+  background-color: #110d36;
+  border: #261d64;
+  color:white;
+  font-size: 18px;
+  text-align: end;
+  margin: 10px;
+}
+
+input[type=number]:focus{
+
+  border:3px solid #261d64;
+ 
+}
+
+.fillthediv img{
+  height: 50px;
+  width: 50px;
+}
+
+.image-container{
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.logos{
+    border-radius: 0.75rem;
+    background-color: #110d36;
+    height: 150px;
+    width: 150px;
+}
+
+.logos h2 {
+  color: white;
+  overflow: hidden;
+}
+
+.inputusd{
+  width: 70%;
+  height: 110px;
+  border-radius: 0.75rem;
+  background-color: #110d36;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  
+}
+.main-box{
+  margin-top: 100px;
+  height: 600px;
+  width: 500px;
+  border-radius: 5% ;
+  background-color: #1e1c3d;
+  border-color: #261d64 ;
+border-width: 4px;
+border-style: solid;
+  justify-content: center;
+  align-self: center;
+
+}
+
+.fillthediv{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  
+  flex-direction: column;
+}
+
+.linkhandler{
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
+.linkhandler h2{
+  margin-top: 25px;
+  color: white;
+}
+
+
+.btn {
+  display: block;
+  height: 50px;
+  width: 186px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  align-self: center;
+
+}
+.btn:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  background: rgba(59, 173, 227, 1);
+  background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+  height: 50px;
+  width: 372px;
+  z-index: -1;
+  transform: translateX(-280px);
+  transition: transform 400ms ease-in;
+}
+.btn:hover:after {
+  transform: translateX(-200px);
+}
+.btn span {
+  position: relative;
+  top: 16px;
+}
+.header h1{
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

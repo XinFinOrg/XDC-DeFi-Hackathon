@@ -1,0 +1,87 @@
+.loan-container{
+    display: flex;
+    flex-direction: column;
+
+   width: 100%;
+    align-self: center;
+    margin-top: 30px;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+
+}
+.contain-loan{
+    display: flex;
+    
+
+}
+
+
+.asset h1{
+
+    font-size: 22px;
+    background: -webkit-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    
+}
+
+.asset-id h1{
+    font-size: 26px;
+    color: white;
+    
+}
+
+.asset-id{
+    height: 50px;
+    width: 150px;
+    background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.asset h2{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    align-self: center;
+
+}
+.asset-contra{
+    height: 100%;
+    display: flex;
+}
+
+.asset-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  
+     
+ align-items: center;
+
+}
+
+
+
+.but{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.single-loan{
+    height: 150px;
+    margin: 20px;
+    border-radius: 1rem;
+    width: 40%;
+    align-self: center;
+    background-color:#302f44;
+    display: flex;
+    justify-content: space-between;
+
+
+
+}
