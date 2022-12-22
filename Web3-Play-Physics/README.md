@@ -13,6 +13,8 @@ Moralis
 
 Chainlink VRF
 
+XDC network
+
 BNB Blockchain
 
 NFT.storage
@@ -60,7 +62,10 @@ Mass Reach: Web3 Play Physics is simple app which with the help of connected WRL
 
 Details:
 
-1. Covalent API endpoint: There 5 endpoint API that currently used on the Web3 Play Physics dashboard.
+1a. XDC network: XDC network for borrowing WRLDS balls and sharing Physics videos via streaming channels: Borrowing XDC funds for borrowing WRLDS balls and creating custom content or new lesson plans for teach Physics using AR/VR activities: https://github.com/aspiringdevapps/Water-ICM/tree/main/Solution-Model-ICM-Planner/XDC-network
+We allow educators, designers and developers to set up an XDC account, send funds, and apply for community grants to create custom content or AR/VR activities to teach Physics in a fun or engaging manner. XDC funds are also used for borrowing WRLDS or other iot balls.
+
+1b. Covalent API endpoint: There 5 endpoint API that currently used on the Web3 Play Physics dashboard.
 
 Get Block Height - to convert timestamp to block id
 
