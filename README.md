@@ -49,4 +49,8 @@ We allow community or civic organizations to set up an XDC account, send funds, 
 
 2. EV Charging Stations on XDC network for monitoring of charging in EV systems, Connected vehicles for efficiency and sustainability. We are extending and adapting our platform for connected vehicles for sustainability and efficiency. We are currently working on a dataset of 15000 trips, 45+ trucks and 175+ drivers and enabling them to achieve better in fleet management.  Please visit: https://github.com/seetadev/XDC-DeFi-Hackathon/tree/main/Transport-Monitor/EV-Charge-Monitoring-Notification
 
+3. XDC Transport NFT: My Transport NFT is a complete project consisting of a collection of smart contracts working in unison, a Public Goods Fund, Community Resources, that were launched as NFTS meant to raise funds, and bring awarness towards public good causes in clean transportation and mobility.
 
+Our concept is simple yet effective. Provide a safe environment where citizens can learn about Block Chain technology in mobility, Web 3, AI, and all of the other aspects of the space. Through the use of NFTs, and the Metaverse, we seek to engage them towards cleaner transportation practices and fuel efficiency. Also, enable them to switch from petrol cars to EV vehicles.
+
+We have also added many innovative features, like an NFT rentable marketplace for EV vehicles, that allows users to purchase, sell and rent their My Transport NFT. A Redeem, where you can redeem our Transport Tokens for NFTs, items and more.
