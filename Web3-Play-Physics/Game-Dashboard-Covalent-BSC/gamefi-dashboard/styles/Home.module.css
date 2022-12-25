@@ -1,0 +1,102 @@
+@import "https://unpkg.com/carbon-components/css/carbon-components.min.css";
+
+.container {
+  padding: 0 2rem;
+  min-height: 100vh;
+}
+
+.mainLayout {
+  margin-top: 75px;
+}
+
+.gridLayout{
+  display: flex;
+  /* grid-template-rows: repeat(2, 1fr); */
+  flex-direction: column;
+  gap: 36px;
+}
+
+.gridKPI {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.gridListed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.itemCard {
+  width: 100%;
+}
+
+.itemCardList {
+  width: 100%;
+}
+
+.cardListed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0px;
+}
+
+.flexDetail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.detailItem {
+  width: 100%
+}
+
+.titleStat {
+  font-size: 14px;
+  color: white;
+  padding: 12px 0px;
+}
+
+.accountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0px;
+}
+
+.flexCharts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.itemChart {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1200px) {
+  .itemCardList {
+    width: 47.5%;
+  }
+
+  .itemCard {
+    width: 31%;
+  }
+
+  .detailItem {
+    width: 47.5%;
+  }
+
+  .itemChart {
+    width: 47.5%;
+  }
+}

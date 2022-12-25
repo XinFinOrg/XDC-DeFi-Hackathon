@@ -1,0 +1,29 @@
+.cardStatContainer {
+    width: 100%;
+    border: 2px solid #3a3f50;
+    border-radius: 10px;
+    color: white;
+}
+
+.statWrapper {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.statList {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detailList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+

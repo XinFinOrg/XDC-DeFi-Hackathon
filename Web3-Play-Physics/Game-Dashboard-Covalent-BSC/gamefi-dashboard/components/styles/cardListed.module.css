@@ -1,0 +1,23 @@
+.cardListedContainer {
+    width: 100%;
+    border: 2px solid #3a3f50;
+    border-radius: 10px;
+    color: white;
+}
+
+.cardListedBody {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.classType{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
