@@ -30,7 +30,7 @@ const store = configureStore({
       .concat(save({ states: PERSISTED_KEYS, debounce: 1000 })),
   preloadedState: load({
     states: PERSISTED_KEYS,
-    disableWarnings: process.env.NODE_ENV === 'test',
+    disableWarnings: process.env.NODE_ENV === 'production',
   }),
 });
 

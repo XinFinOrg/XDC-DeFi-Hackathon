@@ -1,6 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { setLastSwapInfo } from './actions';
+import { setLastSwapInfo, updateSelectedNetworks } from './actions';
 import { ISwapsStateData } from './interfaces/data.interface';
+import { initialSelectedNetworks } from '../../constants';
 
 export const initialState: ISwapsStateData = {
   lastSwapInfo: {
@@ -12,13 +13,24 @@ export const initialState: ISwapsStateData = {
     token: '',
     secret: '',
   },
+  selectedNetworks: initialSelectedNetworks,
 };
 
 export default createReducer(initialState, (builder) =>
-  builder.addCase(setLastSwapInfo, (state, { payload }): ISwapsStateData => {
-    return {
-      ...state,
-      lastSwapInfo: payload,
-    };
-  }),
+  builder
+    .addCase(setLastSwapInfo, (state, { payload }): ISwapsStateData => {
+      return {
+        ...state,
+        lastSwapInfo: payload,
+      };
+    })
+    .addCase(updateSelectedNetworks, (state, { payload }): ISwapsStateData => {
+      return {
+        ...state,
+        selectedNetworks: {
+          ...state.selectedNetworks,
+          ...payload,
+        },
+      };
+    }),
 );

@@ -1,5 +1,17 @@
+import { ChainId } from '../../../interfaces/connection-config.interface';
+
+export enum SwapType {
+  initiator = 'initiator',
+  replier = 'replier',
+}
+
+export type ISelectedNetworks = {
+  [key in SwapType]: ChainId;
+};
+
 export interface ISwapsStateData {
   lastSwapInfo: ILastSwapInfo;
+  selectedNetworks: ISelectedNetworks;
 }
 
 export interface ILastSwapInfo {
