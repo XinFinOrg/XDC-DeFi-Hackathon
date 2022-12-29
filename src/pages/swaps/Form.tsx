@@ -237,148 +237,150 @@ export const Form = ({ swapType }: IProps) => {
   };
 
   return (
-    <Wrappers width='45%'>
-      <Limiter>
-        {status === Status.PENDING && (
-          <Div
-            width='100%'
-            height='100%'
-            display='flex'
-            justify='center'
-            align='center'
-            position='absolute'
-            zIndex='2'
-          >
-            <Loader size='30px' />
-          </Div>
-        )}
-
-        <Flex
-          flexDirection='column'
-          gap='2rem'
-          position='relative'
-          style={{
-            opacity: status === Status.PENDING ? '0.1' : '1',
-          }}
-        >
-          <Flex>
-            <Span fontSizePreset='large' fontWeightPreset='bold'>
-              {swapType.label}
-            </Span>
-          </Flex>
-          <Select
-            label='Select Network'
-            width='100%'
-            value={selectedChainId}
-            change={(v) => setSelectedChainIdInLocalStorage(v)}
-            options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({
-              label: CHAIN_INFO[id].label,
-              value: id,
-            }))}
-          />
-          {lastSwapNumber !== 0 && (
-            <LastSwapInfo swapNumber={lastSwapNumber} atomxContract={atomxContract} />
+    <Flex flexDirection='column' width='50%' align='stretch' gap='1rem'>
+      <Select
+        label='Select Network'
+        width='100%'
+        value={selectedChainId}
+        change={(v) => setSelectedChainIdInLocalStorage(v)}
+        options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({
+          label: CHAIN_INFO[id].label,
+          value: id,
+        }))}
+      />
+      <Wrappers>
+        <Limiter>
+          {status === Status.PENDING && (
+            <Div
+              width='100%'
+              height='100%'
+              display='flex'
+              justify='center'
+              align='center'
+              position='absolute'
+              zIndex='2'
+            >
+              <Loader size='30px' />
+            </Div>
           )}
-          {swapNumber !== 0 ? (
-            <ShowInfo
-              updateSwapNumber={updateSwapNumber}
-              swapNumber={swapNumber}
-              atomxContract={atomxContract}
-              needToSwitch={needToSwitch}
-            />
-          ) : (
-            <Flex flexDirection='column' gap='1rem' width='100%'>
-              <Flex flexDirection='column'>
-                <Flex style={{ zIndex: 10 }}>
-                  <TextInputWithStatus
-                    type={IType.ADDRESS}
-                    value={data.token}
-                    change={(v) => setData((prev) => ({ ...prev, token: v }))}
-                    label='Sending token address'
-                    getStatus={(s) => setDataStatus((prev) => ({ ...prev, token: s }))}
-                    placeholder='0x123...'
-                    props={data.token ? { boxShadow: 'none' } : {}}
-                  />
+
+          <Flex
+            flexDirection='column'
+            gap='2rem'
+            position='relative'
+            style={{
+              opacity: status === Status.PENDING ? '0.1' : '1',
+            }}
+          >
+            <Flex>
+              <Span fontSizePreset='large' fontWeightPreset='bold'>
+                {swapType.label}
+              </Span>
+            </Flex>
+            {lastSwapNumber !== 0 && (
+              <LastSwapInfo swapNumber={lastSwapNumber} atomxContract={atomxContract} />
+            )}
+            {swapNumber !== 0 ? (
+              <ShowInfo
+                updateSwapNumber={updateSwapNumber}
+                swapNumber={swapNumber}
+                atomxContract={atomxContract}
+                needToSwitch={needToSwitch}
+              />
+            ) : (
+              <Flex flexDirection='column' gap='1rem' width='100%'>
+                <Flex flexDirection='column'>
+                  <Flex style={{ zIndex: 10 }}>
+                    <TextInputWithStatus
+                      type={IType.ADDRESS}
+                      value={data.token}
+                      change={(v) => setData((prev) => ({ ...prev, token: v }))}
+                      label='Sending token address'
+                      getStatus={(s) => setDataStatus((prev) => ({ ...prev, token: s }))}
+                      placeholder='0x123...'
+                      props={data.token ? { boxShadow: 'none' } : {}}
+                    />
+                  </Flex>
+
+                  {data.token && dataStatus.token === IInputStatus.VALID && account && (
+                    <TokenInfoBlock token={tokenInfo} />
+                  )}
                 </Flex>
 
-                {data.token && dataStatus.token === IInputStatus.VALID && account && (
-                  <TokenInfoBlock token={tokenInfo} />
-                )}
-              </Flex>
-
-              <TextInputWithStatus
-                type={IType.NUMBER}
-                value={data.amount}
-                change={(v) => setData((prev) => ({ ...prev, amount: v }))}
-                label='Amount'
-                getStatus={(status) => console.log(status)}
-                placeholder='0'
-              />
-
-              <TextInputWithStatus
-                type={IType.TEXT}
-                change={(v) => console.log(v)}
-                value={`${swapType.timeToLock} minutes`}
-                label='Time to lock'
-                getStatus={(status) => console.log(status)}
-                placeholder='0'
-                readOnly={true}
-              />
-
-              <TextInputWithStatus
-                type={IType.ADDRESS}
-                value={data.receiverAddress}
-                change={(v) => setData((prev) => ({ ...prev, receiverAddress: v }))}
-                label='Receiver address'
-                getStatus={(status) => console.log(status)}
-                placeholder='enter address'
-              />
-
-              {role === 0 ? (
-                <GenerateHash
-                  getSecretKey={(v) => setSecretKey(v)}
-                  change={(publicHash) => setData((prev) => ({ ...prev, publicHash }))}
+                <TextInputWithStatus
+                  type={IType.NUMBER}
+                  value={data.amount}
+                  change={(v) => setData((prev) => ({ ...prev, amount: v }))}
+                  label='Amount'
+                  getStatus={(status) => console.log(status)}
+                  placeholder='0'
                 />
-              ) : (
+
                 <TextInputWithStatus
                   type={IType.TEXT}
-                  value={data.publicHash}
-                  change={(v) => setData((prev) => ({ ...prev, publicHash: v }))}
-                  label='Public HASH (copy from counterparty contract)'
+                  change={(v) => console.log(v)}
+                  value={`${swapType.timeToLock} minutes`}
+                  label='Time to lock'
                   getStatus={(status) => console.log(status)}
-                  placeholder='enter hash'
+                  placeholder='0'
+                  readOnly={true}
                 />
-              )}
 
-              <Flex justify='start' gap='0.3rem' flexWrap='wrap'>
-                {needToSwitch && connector ? (
-                  <ButtonPrimary
-                    onClick={() => trySwitchingNetwork(connector, activate, needToSwitch)}
-                    width='fit-content'
-                    margin='0 auto'
-                  >
-                    {`Switch to ${CHAIN_INFO[needToSwitch].label}`}
-                  </ButtonPrimary>
+                <TextInputWithStatus
+                  type={IType.ADDRESS}
+                  value={data.receiverAddress}
+                  change={(v) => setData((prev) => ({ ...prev, receiverAddress: v }))}
+                  label='Receiver address'
+                  getStatus={(status) => console.log(status)}
+                  placeholder='enter address'
+                />
+
+                {role === 0 ? (
+                  <GenerateHash
+                    getSecretKey={(v) => setSecretKey(v)}
+                    change={(publicHash) => setData((prev) => ({ ...prev, publicHash }))}
+                  />
                 ) : (
-                  <>
-                    {needToApprove && (
-                      <ButtonOutlined onClick={handleApprove}>APPROVE</ButtonOutlined>
-                    )}
-                    <BaseButton
-                      bg='black'
-                      color='white'
-                      disabled={needToApprove}
-                      onClick={handleCreatePresale}
-                    >
-                      CREATE SWAP
-                    </BaseButton>
-                  </>
+                  <TextInputWithStatus
+                    type={IType.TEXT}
+                    value={data.publicHash}
+                    change={(v) => setData((prev) => ({ ...prev, publicHash: v }))}
+                    label='Public HASH (copy from counterparty contract)'
+                    getStatus={(status) => console.log(status)}
+                    placeholder='enter hash'
+                  />
                 )}
+
+                <Flex justify='start' gap='0.3rem' flexWrap='wrap'>
+                  {needToSwitch && connector ? (
+                    <ButtonPrimary
+                      onClick={() => trySwitchingNetwork(connector, activate, needToSwitch)}
+                      width='fit-content'
+                      margin='0 auto'
+                    >
+                      {`Switch to ${CHAIN_INFO[needToSwitch].label}`}
+                    </ButtonPrimary>
+                  ) : (
+                    <>
+                      {needToApprove && (
+                        <ButtonOutlined onClick={handleApprove}>APPROVE</ButtonOutlined>
+                      )}
+                      <BaseButton
+                        bg='black'
+                        color='white'
+                        disabled={needToApprove}
+                        onClick={handleCreatePresale}
+                      >
+                        CREATE SWAP
+                      </BaseButton>
+                    </>
+                  )}
+                </Flex>
               </Flex>
-            </Flex>
-          )}
-        </Flex>
-      </Limiter>
-    </Wrappers>
+            )}
+          </Flex>
+        </Limiter>
+      </Wrappers>
+    </Flex>
   );
 };
