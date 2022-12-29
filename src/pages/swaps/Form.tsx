@@ -29,9 +29,10 @@ import styled from 'styled-components';
 import { BaseButton, ButtonOutlined, ButtonPrimary } from '../../components/Common/Button';
 import { useWeb3React } from '@web3-react/core';
 import { Span } from '../../components/Common/Span';
-import { useLastSwapInfo } from '../../store/swaps/hooks';
+import { useLastSwapInfo, useSelectedNetwork } from '../../store/swaps/hooks';
 import Div from '../../components/Common/Div';
-import { useAtomxContract } from '../../hooks/useContract';
+import { SwapType } from '../../store/swaps/interfaces/data.interface';
+import { SelectNetwork } from './SelectNetwork';
 
 const Limiter = styled(Flex)`
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -55,8 +56,6 @@ const initialCreateDataStatus: CreateDataStatus = {
   token: IInputStatus.EMPTY,
 };
 
-const MinutesVariants = [15, 30, 45, 60];
-
 const Overlapping = styled(Flex)`
   width: 100%;
   height: 100%;
@@ -69,14 +68,12 @@ const Overlapping = styled(Flex)`
 `;
 
 interface IProps {
-  swapType: {
-    value: number;
-    label: string;
-    timeToLock: number;
-  };
+  swapType: SwapType;
+  label: string;
+  timeToLock: number;
 }
 
-export const Form = ({ swapType }: IProps) => {
+export const Form = ({ swapType, label, timeToLock }: IProps) => {
   const { account, library, chainId } = useActiveWeb3React();
   const { connector, activate } = useWeb3React();
   const [status, setStatus] = useState<Status>(Status.INITIAL);
@@ -84,27 +81,12 @@ export const Form = ({ swapType }: IProps) => {
   const [lastSwapNumber, setLastSwapNumber] = useState(0); // swap number
   const [tokenInfo, setTokenInfo] = useState<TokenInfo>(initialTokenInfo);
   const [balance, setBalance] = useState<BigNumber>(BIG_ZERO);
-  const [role, setRole] = useState(0);
   const addTransaction = useTransactionAdderWithCallback();
   const [atomxContract, setAtomxContract] = useState<AtomxER20 | null>(null);
   const [secretKey, setSecretKey] = useState('');
   const lastSwapInfo = useLastSwapInfo();
 
-  const getSelectedChainIdFromLocalStorage = () => {
-    return JSON.parse(localStorage.getItem('selectedChainIds') || '{}');
-  };
-
-  const [selectedChainId, setSelectedChainId] = useState<ChainId>(
-    getSelectedChainIdFromLocalStorage()[swapType.value] || ChainId.XDC_TEST,
-  );
-
-  const setSelectedChainIdInLocalStorage = (chainId: ChainId) => {
-    const selectedChainIdFromStorage = getSelectedChainIdFromLocalStorage();
-
-    selectedChainIdFromStorage[swapType.value] = chainId;
-    localStorage.setItem('selectedChainIds', JSON.stringify(selectedChainIdFromStorage));
-    setSelectedChainId(getSelectedChainIdFromLocalStorage()[swapType.value]);
-  };
+  const selectedChainId = useSelectedNetwork(swapType);
 
   const downloadTxtFile = () => {
     if (!secretKey) return;
@@ -128,8 +110,7 @@ export const Form = ({ swapType }: IProps) => {
   const [dataStatus, setDataStatus] = useState<CreateDataStatus>(initialCreateDataStatus);
 
   useEffect(() => {
-    setRole(swapType.value);
-    const timestamp = Math.floor(Date.now() / 1000) + swapType.timeToLock * 60;
+    const timestamp = Math.floor(Date.now() / 1000) + timeToLock * 60;
     setData((prev) => ({ ...prev, timestamp }));
   }, [swapType]);
 
@@ -297,15 +278,16 @@ export const Form = ({ swapType }: IProps) => {
 
   return (
     <Flex flexDirection='column' width='50%' align='stretch' gap='1rem'>
-      <Select
-        label='Select Network'
-        value={selectedChainId}
-        change={(v) => setSelectedChainIdInLocalStorage(v)}
-        options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({
-          label: CHAIN_INFO[id].label,
-          value: id,
-        }))}
-      />
+      {/*<Select*/}
+      {/*  label='Select Network'*/}
+      {/*  value={selectedChainId}*/}
+      {/*  change={(v) => setSelectedChainIdInLocalStorage(v)}*/}
+      {/*  options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({*/}
+      {/*    label: CHAIN_INFO[id].label,*/}
+      {/*    value: id,*/}
+      {/*  }))}*/}
+      {/*/>*/}
+      <SelectNetwork swapType={swapType} />
       <Wrappers>
         <Limiter>
           {overlappingContent}
@@ -313,7 +295,7 @@ export const Form = ({ swapType }: IProps) => {
           <Flex flexDirection='column' gap='2rem' position='relative'>
             <Flex>
               <Span fontSizePreset='large' fontWeightPreset='bold'>
-                {swapType.label}
+                {label}
               </Span>
             </Flex>
             {lastSwapNumber !== 0 && (
@@ -358,7 +340,7 @@ export const Form = ({ swapType }: IProps) => {
                 <TextInputWithStatus
                   type={IType.TEXT}
                   change={(v) => console.log(v)}
-                  value={`${swapType.timeToLock} minutes`}
+                  value={`${timeToLock} minutes`}
                   label='Time to lock'
                   getStatus={(status) => console.log(status)}
                   placeholder='0'
@@ -374,7 +356,7 @@ export const Form = ({ swapType }: IProps) => {
                   placeholder='enter address'
                 />
 
-                {role === 0 ? (
+                {swapType === SwapType.initiator ? (
                   <GenerateHash
                     getSecretKey={(v) => setSecretKey(v)}
                     change={(publicHash) => setData((prev) => ({ ...prev, publicHash }))}

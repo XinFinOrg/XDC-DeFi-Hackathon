@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Flex } from '../../components/Common/Flex';
 import { Form } from './Form';
+import { SwapType } from '../../store/swaps/interfaces/data.interface';
 
 const FormsWrapper = styled(Flex)`
   gap: 2rem;
@@ -14,12 +15,12 @@ const FormsWrapper = styled(Flex)`
 const Swaps = () => {
   const swapType = {
     initiator: {
-      value: 0,
+      swapType: SwapType.initiator,
       label: 'INITIATE SWAP',
       timeToLock: 40,
     },
-    replayer: {
-      value: 1,
+    replier: {
+      swapType: SwapType.replier,
       label: 'REPLY SWAP',
       timeToLock: 20,
     },
@@ -27,8 +28,8 @@ const Swaps = () => {
 
   return (
     <FormsWrapper>
-      <Form swapType={swapType.initiator} />
-      <Form swapType={swapType.replayer} />
+      <Form {...swapType.initiator} />
+      <Form {...swapType.replier} />
     </FormsWrapper>
   );
 };
