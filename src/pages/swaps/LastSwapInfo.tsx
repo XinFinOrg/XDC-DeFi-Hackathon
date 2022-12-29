@@ -34,6 +34,9 @@ export const LastSwapInfo = ({ swapNumber, atomxContract }: Props) => {
   useEffect(() => {
     if (!atomxContract) return;
     atomxContract.audit(swapNumber).then((res) => {
+      console.log(res[1].toNumber());
+      console.log(1111111111);
+
       dispatch(
         setLastSwapInfo({
           token: res[0],

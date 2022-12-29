@@ -29,6 +29,9 @@ import styled from 'styled-components';
 import { BaseButton, ButtonOutlined, ButtonPrimary } from '../../components/Common/Button';
 import { useWeb3React } from '@web3-react/core';
 import { Span } from '../../components/Common/Span';
+import { useLastSwapInfo } from '../../store/swaps/hooks';
+import Div from '../../components/Common/Div';
+import { useAtomxContract } from '../../hooks/useContract';
 
 const Limiter = styled(Flex)`
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -85,6 +88,8 @@ export const Form = ({ swapType }: IProps) => {
   const addTransaction = useTransactionAdderWithCallback();
   const [atomxContract, setAtomxContract] = useState<AtomxER20 | null>(null);
   const [secretKey, setSecretKey] = useState('');
+  const lastSwapInfo = useLastSwapInfo();
+
   const getSelectedChainIdFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem('selectedChainIds') || '{}');
   };
@@ -245,6 +250,25 @@ export const Form = ({ swapType }: IProps) => {
       },
     );
   };
+  console.log(swapNumber);
+
+  const handleRefund = async () => {
+    if (atomxContract && library && account) {
+      // const erc20Contract = getERC20Contract(library, lastSwapInfo.token, account);
+      // const tokenSymbol = await erc20Contract.symbol();
+      const res = await atomxContract.refund(swapNumber);
+      addTransaction(
+        res,
+        {
+          type: TransactionType.REFUND,
+          amount: `${data.amount}`,
+        },
+        () => {
+          updateSwapNumber();
+        },
+      );
+    }
+  };
 
   const overlappingContent = useMemo(() => {
     if (status === Status.PENDING) {
@@ -254,8 +278,22 @@ export const Form = ({ swapType }: IProps) => {
         </Overlapping>
       );
     }
+    if (lastSwapInfo.timestamp < Date.now() && lastSwapNumber !== 0) {
+      return (
+        <Overlapping>
+          <Flex flexDirection='column' gap='1rem'>
+            <Div color='red'>Lock time is ended</Div>
+            <BaseButton bg='black' color='white' onClick={handleRefund}>
+              REFUND
+            </BaseButton>
+          </Flex>
+        </Overlapping>
+      );
+    }
     return;
   }, [status]);
+
+  console.log(lastSwapInfo);
 
   return (
     <Flex flexDirection='column' width='50%' align='stretch' gap='1rem'>

@@ -12,7 +12,7 @@ export const MULTICALL_ADDRESS: { [chainId in ChainId]: string } = {
 
 export const ATOMX_ADDRESS: { [chainId in ChainId]: string } = {
   [XDC_PROD]: '',
-  [XDC_TEST]: '0xbEfe4b15E8b47cF40e983770a4Fa2a0ac5060fDC',
+  [XDC_TEST]: '0xf8054a357fb24347643b4341D663c57d77A4d300',
   [BSC_TEST]: '0xDE682b4AAa85171a15dB3fe39817db5f102Af677',
   [BSC_PROD]: '',
   [POLYGON_TEST]: '0xBF6265b4394237b03d1FCbb2e298942c183bfDdB',
