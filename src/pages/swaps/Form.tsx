@@ -3,14 +3,13 @@ import { parseUnits } from '@ethersproject/units';
 import { BigNumber, ethers } from 'ethers';
 import { useEffect, useMemo, useState } from 'react';
 import { Flex } from '../../components/Common/Flex';
-import Select from '../../components/Common/Inputs/Select';
 import TextInputWithStatus, { IType } from '../../components/Common/Inputs/TextInputWithStatus';
 import Loader from '../../components/Loader';
 import { Wrappers } from '../../components/Wrappers';
 import { MAX_UINT256 } from '../../constants';
 import { AtomxER20 } from '../../constants/abis/types';
 import { ATOMX_ADDRESS } from '../../constants/addresses';
-import { ALL_SUPPORTED_CHAIN_IDS, CHAIN_INFO } from '../../constants/chains';
+import { CHAIN_INFO } from '../../constants/chains';
 import useActiveWeb3React from '../../hooks/useActiveWeb3React';
 import { ChainId } from '../../interfaces/connection-config.interface';
 import { Status } from '../../interfaces/statuses';
@@ -214,6 +213,7 @@ export const Form = ({ swapType, label, timeToLock }: IProps) => {
       data.publicHash,
       data.timestamp,
       parseUnits(data.amount, tokenInfo.decimals).toString(),
+      swapType === SwapType.initiator,
       { value: '0' },
     );
 
@@ -277,7 +277,7 @@ export const Form = ({ swapType, label, timeToLock }: IProps) => {
   console.log(lastSwapInfo);
 
   return (
-    <Flex flexDirection='column' width='50%' align='stretch' gap='1rem'>
+    <Flex flexDirection='column' align='stretch' gap='1rem'>
       {/*<Select*/}
       {/*  label='Select Network'*/}
       {/*  value={selectedChainId}*/}

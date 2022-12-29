@@ -34,7 +34,7 @@ module.exports = (app) => {
   app.use(
     '/rpc-polygon-testnet',
     createProxyMiddleware({
-      target: 'https://matic-mumbai.chainstacklabs.com',
+      target: 'https://matic-testnet-archive-rpc.bwarelabs.com',
       changeOrigin: true,
     }),
   );
