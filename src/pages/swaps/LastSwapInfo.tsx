@@ -30,7 +30,6 @@ interface Props {
 export const LastSwapInfo = ({ swapNumber, atomxContract }: Props) => {
   const lastSwapInfo = useLastSwapInfo();
   const dispatch = useAppDispatch();
-  console.log(lastSwapInfo);
 
   useEffect(() => {
     if (!atomxContract) return;
@@ -52,7 +51,7 @@ export const LastSwapInfo = ({ swapNumber, atomxContract }: Props) => {
     <div>
       <Item>
         <Label>Secret of last Swap:</Label>
-        <Copyable content={lastSwapInfo.secret} />
+        <Copyable content={lastSwapInfo?.secret} />
       </Item>
     </div>
   );

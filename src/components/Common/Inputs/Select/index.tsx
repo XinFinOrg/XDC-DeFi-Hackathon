@@ -10,7 +10,7 @@ const SelectStyled = styled.select<{ width?: string }>`
   outline: none;
   border-radius: 10px;
   color: ${({ theme }) => theme.text1_inverse};
-  border: 1px solid ${({ theme }) => theme.bg3};
+  border: 1px solid ${({ theme }) => theme.bg6};
 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -20,7 +20,6 @@ const SelectStyled = styled.select<{ width?: string }>`
 
   background-position-x: calc(100% - 5px);
   background-position-y: 5px;
-
   font-size: 16px;
 
   ::placeholder {

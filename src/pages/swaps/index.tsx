@@ -15,12 +15,12 @@ const Swaps = () => {
   const swapType = {
     initiator: {
       value: 0,
-      label: 'INITIATOR SWAP',
+      label: 'INITIATE SWAP',
       timeToLock: 40,
     },
     replayer: {
       value: 1,
-      label: 'REPLAYER SWAP',
+      label: 'REPLY SWAP',
       timeToLock: 20,
     },
   };

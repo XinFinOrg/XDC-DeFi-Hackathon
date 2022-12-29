@@ -2,7 +2,6 @@ import { Web3Provider } from '@ethersproject/providers';
 import { parseUnits } from '@ethersproject/units';
 import { BigNumber, ethers } from 'ethers';
 import { useEffect, useMemo, useState } from 'react';
-import Div from '../../components/Common/Div';
 import { Flex } from '../../components/Common/Flex';
 import Select from '../../components/Common/Inputs/Select';
 import TextInputWithStatus, { IType } from '../../components/Common/Inputs/TextInputWithStatus';
@@ -54,6 +53,17 @@ const initialCreateDataStatus: CreateDataStatus = {
 };
 
 const MinutesVariants = [15, 30, 45, 60];
+
+const Overlapping = styled(Flex)`
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: ${({ theme }) => `${theme.bg1}ee`};
+  border-radius: 10px;
+  z-index: 2;
+`;
 
 interface IProps {
   swapType: {
@@ -236,11 +246,21 @@ export const Form = ({ swapType }: IProps) => {
     );
   };
 
+  const overlappingContent = useMemo(() => {
+    if (status === Status.SUCCESS) {
+      return (
+        <Overlapping>
+          <Loader size='30px' />
+        </Overlapping>
+      );
+    }
+    return;
+  }, [status]);
+
   return (
     <Flex flexDirection='column' width='50%' align='stretch' gap='1rem'>
       <Select
         label='Select Network'
-        width='100%'
         value={selectedChainId}
         change={(v) => setSelectedChainIdInLocalStorage(v)}
         options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({
@@ -250,28 +270,9 @@ export const Form = ({ swapType }: IProps) => {
       />
       <Wrappers>
         <Limiter>
-          {status === Status.PENDING && (
-            <Div
-              width='100%'
-              height='100%'
-              display='flex'
-              justify='center'
-              align='center'
-              position='absolute'
-              zIndex='2'
-            >
-              <Loader size='30px' />
-            </Div>
-          )}
+          {overlappingContent}
 
-          <Flex
-            flexDirection='column'
-            gap='2rem'
-            position='relative'
-            style={{
-              opacity: status === Status.PENDING ? '0.1' : '1',
-            }}
-          >
+          <Flex flexDirection='column' gap='2rem' position='relative'>
             <Flex>
               <Span fontSizePreset='large' fontWeightPreset='bold'>
                 {swapType.label}
