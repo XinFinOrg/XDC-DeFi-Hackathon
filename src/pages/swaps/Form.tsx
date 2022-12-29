@@ -247,7 +247,7 @@ export const Form = ({ swapType }: IProps) => {
   };
 
   const overlappingContent = useMemo(() => {
-    if (status === Status.SUCCESS) {
+    if (status === Status.PENDING) {
       return (
         <Overlapping>
           <Loader size='30px' />
