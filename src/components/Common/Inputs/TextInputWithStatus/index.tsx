@@ -24,6 +24,7 @@ interface IProps {
   value?: string;
   change: (v: string) => void;
   props?: StyledComponentProps;
+  readOnly?: boolean;
 }
 
 const CurrencyWrapper = styled.div`
@@ -45,6 +46,7 @@ export default function TextInputWithStatus({
   change,
   value,
   props = {},
+  readOnly,
 }: IProps) {
   const [internalValue, setInternalValue] = useState(value);
   const [status, setStatus] = useState(IInputStatus.EMPTY);
@@ -107,6 +109,7 @@ export default function TextInputWithStatus({
           placeholder={placeholder}
           {...props}
           type={type === IType.NUMBER ? 'number' : 'text'}
+          readOnly={readOnly}
         />
         <CurrencyWrapper color={getStatusColor}>{currency}</CurrencyWrapper>
       </Flex>

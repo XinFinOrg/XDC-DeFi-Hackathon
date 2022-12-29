@@ -12,10 +12,23 @@ const FormsWrapper = styled(Flex)`
 `;
 
 const Swaps = () => {
+  const swapType = {
+    initiator: {
+      value: 0,
+      label: 'INITIATOR SWAP',
+      timeToLock: 40,
+    },
+    replayer: {
+      value: 1,
+      label: 'REPLAYER SWAP',
+      timeToLock: 20,
+    },
+  };
+
   return (
     <FormsWrapper>
-      <Form />
-      <Form />
+      <Form swapType={swapType.initiator} />
+      <Form swapType={swapType.replayer} />
     </FormsWrapper>
   );
 };

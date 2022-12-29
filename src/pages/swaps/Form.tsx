@@ -29,6 +29,7 @@ import { LastSwapInfo } from './LastSwapInfo';
 import styled from 'styled-components';
 import { BaseButton, ButtonOutlined, ButtonPrimary } from '../../components/Common/Button';
 import { useWeb3React } from '@web3-react/core';
+import { Span } from '../../components/Common/Span';
 
 const Limiter = styled(Flex)`
   ${({ theme }) => theme.mediaWidth.upToMedium`
@@ -54,11 +55,17 @@ const initialCreateDataStatus: CreateDataStatus = {
 
 const MinutesVariants = [15, 30, 45, 60];
 
-export const Form = () => {
+interface IProps {
+  swapType: {
+    value: number;
+    label: string;
+    timeToLock: number;
+  };
+}
+
+export const Form = ({ swapType }: IProps) => {
   const { account, library, chainId } = useActiveWeb3React();
   const { connector, activate } = useWeb3React();
-  const [selectedChainId, setSelectedChainId] = useState<ChainId>(ChainId.XDC_TEST);
-  console.log(selectedChainId);
   const [status, setStatus] = useState<Status>(Status.INITIAL);
   const [swapNumber, setSwapNumber] = useState(0); // swap number
   const [lastSwapNumber, setLastSwapNumber] = useState(0); // swap number
@@ -68,8 +75,24 @@ export const Form = () => {
   const addTransaction = useTransactionAdderWithCallback();
   const [atomxContract, setAtomxContract] = useState<AtomxER20 | null>(null);
   const [secretKey, setSecretKey] = useState('');
+  const getSelectedChainIdFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem('selectedChainIds') || '{}');
+  };
+
+  const [selectedChainId, setSelectedChainId] = useState<ChainId>(
+    getSelectedChainIdFromLocalStorage()[swapType.value] || ChainId.XDC_TEST,
+  );
+
+  const setSelectedChainIdInLocalStorage = (chainId: ChainId) => {
+    const selectedChainIdFromStorage = getSelectedChainIdFromLocalStorage();
+
+    selectedChainIdFromStorage[swapType.value] = chainId;
+    localStorage.setItem('selectedChainIds', JSON.stringify(selectedChainIdFromStorage));
+    setSelectedChainId(getSelectedChainIdFromLocalStorage()[swapType.value]);
+  };
 
   const downloadTxtFile = () => {
+    if (!secretKey) return;
     const element = document.createElement('a');
     const file = new Blob([secretKey], {
       type: 'text/plain',
@@ -89,11 +112,12 @@ export const Form = () => {
   const [data, setData] = useState(initialCreateData);
   const [dataStatus, setDataStatus] = useState<CreateDataStatus>(initialCreateDataStatus);
 
-  const [minutes, setMinutes] = useState(15);
   useEffect(() => {
-    const timestamp = Math.floor(Date.now() / 1000) + minutes * 60;
+    setRole(swapType.value);
+    const timestamp = Math.floor(Date.now() / 1000) + swapType.timeToLock * 60;
     setData((prev) => ({ ...prev, timestamp }));
-  }, [minutes]);
+  }, [swapType]);
+
   useEffect(() => {
     const contract = getAtomxContract(selectedLibrary, selectedChainId);
     setAtomxContract(contract);
@@ -213,7 +237,7 @@ export const Form = () => {
   };
 
   return (
-    <Wrappers>
+    <Wrappers width='45%'>
       <Limiter>
         {status === Status.PENDING && (
           <Div
@@ -228,6 +252,7 @@ export const Form = () => {
             <Loader size='30px' />
           </Div>
         )}
+
         <Flex
           flexDirection='column'
           gap='2rem'
@@ -236,11 +261,16 @@ export const Form = () => {
             opacity: status === Status.PENDING ? '0.1' : '1',
           }}
         >
+          <Flex>
+            <Span fontSizePreset='large' fontWeightPreset='bold'>
+              {swapType.label}
+            </Span>
+          </Flex>
           <Select
             label='Select Network'
             width='100%'
             value={selectedChainId}
-            change={(v) => setSelectedChainId(v)}
+            change={(v) => setSelectedChainIdInLocalStorage(v)}
             options={ALL_SUPPORTED_CHAIN_IDS.map((id) => ({
               label: CHAIN_INFO[id].label,
               value: id,
@@ -258,10 +288,6 @@ export const Form = () => {
             />
           ) : (
             <Flex flexDirection='column' gap='1rem' width='100%'>
-              <Div fontSizePreset='large' fontWeightPreset='bold'>
-                FILL THE FORM
-              </Div>
-
               <Flex flexDirection='column'>
                 <Flex style={{ zIndex: 10 }}>
                   <TextInputWithStatus
@@ -288,15 +314,15 @@ export const Form = () => {
                 getStatus={(status) => console.log(status)}
                 placeholder='0'
               />
-              <Select
-                label='Select time to lock'
-                width='100%'
-                value={minutes}
-                change={(v) => setMinutes(v)}
-                options={MinutesVariants.map((minutes) => ({
-                  label: `${minutes} minutes`,
-                  value: minutes,
-                }))}
+
+              <TextInputWithStatus
+                type={IType.TEXT}
+                change={(v) => console.log(v)}
+                value={`${swapType.timeToLock} minutes`}
+                label='Time to lock'
+                getStatus={(status) => console.log(status)}
+                placeholder='0'
+                readOnly={true}
               />
 
               <TextInputWithStatus
@@ -308,20 +334,6 @@ export const Form = () => {
                 placeholder='enter address'
               />
 
-              <Select
-                label='Choose the role'
-                value={role}
-                options={[
-                  { value: 0, label: "I'm initiator (first)" },
-                  { value: 1, label: "I'm replier (second)" },
-                ]}
-                change={(v) => {
-                  setRole(v);
-                  if (v) {
-                    setData((prev) => ({ ...prev, publicHash: '' }));
-                  }
-                }}
-              />
               {role === 0 ? (
                 <GenerateHash
                   getSecretKey={(v) => setSecretKey(v)}

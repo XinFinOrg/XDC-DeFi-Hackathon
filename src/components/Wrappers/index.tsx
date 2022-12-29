@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro';
 
-export const Wrappers = styled.div<{ padding?: string }>`
+export const Wrappers = styled.div<{ padding?: string; width?: string }>`
   position: relative;
+  width: ${({ width }) => (width ? width : 'auto')};
   background: ${({ theme }) => theme.bg0};
   border-radius: 10px;
   padding: ${({ padding }) => (padding ? padding : '2rem')};
