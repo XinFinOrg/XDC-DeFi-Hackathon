@@ -1,5 +1,4 @@
 import { createAction } from '@reduxjs/toolkit';
+import { ILastSwapInfo } from './interfaces/data.interface';
 
-export const setSelectedNetworks = createAction<{ from: number; to: number }>(
-  'swaps/setSelectedNetworks',
-);
+export const setLastSwapInfo = createAction<ILastSwapInfo>('swaps/setLastSwapInfo');

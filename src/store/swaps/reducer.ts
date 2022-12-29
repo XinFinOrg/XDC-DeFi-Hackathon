@@ -1,19 +1,24 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { setSelectedNetworks } from './actions';
+import { setLastSwapInfo } from './actions';
 import { ISwapsStateData } from './interfaces/data.interface';
 
 export const initialState: ISwapsStateData = {
-  selectedNetworks: {
-    from: 50,
-    to: 97,
+  lastSwapInfo: {
+    amount: '',
+    publicHash: '',
+    receiverAddress: '',
+    sender: '',
+    timestamp: 0,
+    token: '',
+    secret: '',
   },
 };
 
 export default createReducer(initialState, (builder) =>
-  builder.addCase(setSelectedNetworks, (state, { payload }): ISwapsStateData => {
+  builder.addCase(setLastSwapInfo, (state, { payload }): ISwapsStateData => {
     return {
       ...state,
-      selectedNetworks: payload,
+      lastSwapInfo: payload,
     };
   }),
 );
