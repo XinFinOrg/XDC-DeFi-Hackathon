@@ -70,7 +70,7 @@
 
     &.open {
       padding-bottom: 0.5rem;
-      overflow-y: overlay;
+      overflow-y: auto;
 
       &::before {
         transform: rotate(180deg);

@@ -24,13 +24,14 @@ export async function getServerSideProps(context) {
   const query = new URLSearchParams(context.query);
   const action = query.get('action');
   const apiHost = process.env.API_HOST !== undefined ? process.env.API_HOST : "https://api.nomis.cc";
+  const xummApiKey = process.env.XUMM_API_KEY !== undefined ? process.env.XUMM_API_KEY : "c52e47df-b650-4065-afb5-a7e363fcac9c";
 
-  return { props: { blockchainSlug, fullAddress, action, apiHost } };
+  return { props: { blockchainSlug, fullAddress, action, apiHost, xummApiKey } };
 }
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-export default function Scored({ blockchainSlug, fullAddress, action, apiHost }) {
+export default function Scored({ blockchainSlug, fullAddress, action, apiHost, xummApiKey }) {
   const blockchain = blockchains.find((b) => b.slug === blockchainSlug).apiSlug;
 
   const { data: wallet, error } = useSWR(
@@ -116,6 +117,7 @@ export default function Scored({ blockchainSlug, fullAddress, action, apiHost })
               fullAddress={fullAddress}
               action={action}
               apiHost={apiHost}
+              xummApiKey={xummApiKey}
             />
             <div className={`mobile ${isScrolled ? "isScrolled" : ""}`}>
               <WalletUser
@@ -127,6 +129,7 @@ export default function Scored({ blockchainSlug, fullAddress, action, apiHost })
                 fullAddress={fullAddress}
                 action={action}
                 apiHost={apiHost}
+                xummApiKey={xummApiKey}
               />
             </div>
           </div>

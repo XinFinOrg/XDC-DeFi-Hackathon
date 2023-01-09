@@ -9,7 +9,8 @@ import userpick1 from "../public/userpicks/userpick1.svg";
 import userpick2 from "../public/userpicks/userpick2.svg";
 import userpick3 from "../public/userpicks/userpick3.svg";
 
-import MintScore from "./MintScore";
+import MintScoreEvm from "./MintScoreEvm";
+import MintScoreXrp from "./MintScoreXrp";
 
 export default function WalletUser({
   wallet,
@@ -20,6 +21,7 @@ export default function WalletUser({
   fullAddress,
   action,
   apiHost,
+  xummApiKey,
 }) {
   const [random, setRandom] = React.useState();
   React.useEffect(() => {
@@ -45,7 +47,22 @@ export default function WalletUser({
             <UserStats wallet={wallet} blockchain={blockchainSlug} group={group} />
           </div>
         </div>
-        <MintScore blockchainSlug={blockchainSlug} blockchain={blockchain} action={action} apiHost={apiHost} />
+        {blockchainSlug === "ripple" ? (
+          <MintScoreXrp
+            blockchainSlug={blockchainSlug}
+            blockchain={blockchain}
+            action={action}
+            apiHost={apiHost}
+            xummApiKey={xummApiKey}
+          />
+        ) : (
+          <MintScoreEvm
+            blockchainSlug={blockchainSlug}
+            blockchain={blockchain}
+            action={action}
+            apiHost={apiHost}
+          />
+        )}
       </section>
     </>
   );

@@ -23,7 +23,10 @@
     "react-hotkeys-hook": "^3.4.7",
     "react-ipgeolocation": "^1.4.0",
     "sass": "^1.55.0",
-    "swr": "^1.3.0"
+    "swr": "^1.3.0",
+    "xrpl": "^2.7.0-beta.0",
+    "xumm-oauth2-pkce": "^2.5.5",
+    "xumm-sdk": "^1.7.0"
   },
   "devDependencies": {
     "eslint": "8.24.0",

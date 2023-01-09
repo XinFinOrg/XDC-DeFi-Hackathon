@@ -1,7 +1,7 @@
 import React from "react";
 import { ethers } from "ethers";
 
-import { Score } from "../components/Card";
+import { Score } from "./Card";
 
 import { blockchains } from "../utilities/blockchains";
 import useSWR from "swr";
@@ -16,6 +16,7 @@ export default function MintScore(props) {
   const [scoreTokenValue, setScoreTokenValue] = React.useState("");
   const [noData, setNoData] = React.useState(true);
   const [API_HOST, setApiHost] = React.useState(null);
+  const [currentBlockchain, setCurrentBlockchain] = React.useState(null);
   const renderAfterCalled = React.useRef(false);
 
   const isEcoScore =
@@ -157,7 +158,9 @@ export default function MintScore(props) {
       setLoading(true);
       var switchResult = await tryToSwitchChain();
       if (switchResult) {
-        const transaction = await contract.setScore(scoreValue);
+        const transaction = currentBlockchain === "xdc" 
+          ? await contract.setScore(scoreValue, { gasLimit: 315750 }).catch(console.error)
+          : await contract.setScore(scoreValue);
         await transaction.wait();
         await getScoreToken(addressValue);
       }
@@ -173,12 +176,14 @@ export default function MintScore(props) {
     }
     renderAfterCalled.current = true;
 
+    setCurrentBlockchain(blockchain);
     if (apiHost !== undefined) {
       setApiHost(apiHost);
 
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
+
       setAddressValue(accounts[0]);
       getScoreToken(accounts[0]).catch(console.error);
       fetchMyScore(accounts[0], blockchain, apiHost).catch(console.error);
@@ -242,6 +247,19 @@ export default function MintScore(props) {
       return;
     }
 
+    let domain = window.location.origin === "http://localhost:3000" 
+      ? "https://test.nomis.cc" 
+      : window.location.origin;
+
+    // disable Rapyd payment for prod
+    if (domain.includes("test.") !== true) {
+      console.log(domain.includes("test."));
+      setPaid(true);
+      setButtonLabel("Mint or Update");
+      setLoading(false);
+      return;
+    }
+
     const isCustomerExist = allCustomers.data.find(
       (customer) => customer.name === addressValue
     );
@@ -270,8 +288,6 @@ export default function MintScore(props) {
 
     if (!window.localStorage.getItem("checkoutId")) {
       let customerId = window.localStorage.getItem("customerId");
-
-      let domain = window.location.origin === "http://localhost:3000" ? "https://test.nomis.cc" : window.location.origin;
 
       await fetch(`${apiHost}/api/v1/rapyd/checkout`, {
         method: "post",
