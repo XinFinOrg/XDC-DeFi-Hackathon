@@ -1,0 +1,26 @@
+.WalletData {
+  background: $bg-overlay-1;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem 1rem;
+  border-radius: $border-l;
+
+  .noData {
+    background: $bg-overlay-1;
+    border-radius: $border-m;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      h3 {
+        margin-top: 0.75rem;
+      }
+
+      span {
+        max-width: 64px !important;
+      }
+    }
+  }
+}

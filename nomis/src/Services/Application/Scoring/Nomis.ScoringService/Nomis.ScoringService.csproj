@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Storage\Nomis.DataAccess.Scoring.Interfaces\Nomis.DataAccess.Scoring.Interfaces.csproj" />
+    <ProjectReference Include="..\Nomis.ScoringService.Interfaces\Nomis.ScoringService.Interfaces.csproj" />
+  </ItemGroup>
+</Project>

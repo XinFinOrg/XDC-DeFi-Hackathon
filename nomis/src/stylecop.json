@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "orderingRules": {
+      "systemUsingDirectivesFirst": true,
+      "usingDirectivesPlacement": "outsideNamespace",
+      "blankLinesBetweenUsingGroups": "require"
+    },
+    "documentationRules": {
+      "companyName": "Nomis",
+      "copyrightText": "Copyright (c) {companyName}, {year}. All rights reserved.\nThe Application under the {licenseName} license. See {licenseFile} file in the solution root for full license information.",
+      "headerDecoration": "------------------------------------------------------------------------------------------------------",
+      "variables": {
+        "licenseName": "MIT",
+        "licenseFile": "LICENSE",
+        "year": "2022"
+      },
+      "documentationCulture": "en-US"
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "omit",
+      "allowConsecutiveUsings": true
+    }
+  }
+}

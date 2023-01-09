@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Services\Infrastructure\Coingecko\Nomis.Coingecko.Interfaces\Nomis.Coingecko.Interfaces.csproj" />
+    <ProjectReference Include="..\..\..\Services\Application\Scoring\Nomis.ScoringService.Interfaces\Nomis.ScoringService.Interfaces.csproj" />
+    <ProjectReference Include="..\Nomis.Xdcscan.Interfaces\Nomis.Xdcscan.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Configs\Xdc.Xdcscan.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

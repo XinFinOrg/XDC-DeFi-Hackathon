@@ -1,0 +1,22 @@
+.logo {
+  text-decoration: none;
+  display: flex;
+  gap: 0.25em;
+
+  .type {
+    font-family: "Space Grotesk", sans-serif;
+    color: $text-title;
+    letter-spacing: -0.04em;
+  }
+
+  .beta {
+    font-family: $font-main;
+    font-size: 0.5em;
+    padding: 0.25em 0.5em;
+    border: 1px solid $border-color;
+    border-radius: 0.625em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
