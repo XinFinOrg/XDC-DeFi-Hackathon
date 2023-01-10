@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "https://google.com" },
+    { "source": "/rpc-xdc-mainnet/:path*", "destination": "https://erpc.xinfin.network/:path*" },
+    { "source": "/rpc-xdc-testnet/:path*", "destination": "https://rpc.apothem.network/:path*" },
+    {
+      "source": "/rpc-bsc-mainnet/:path*",
+      "destination": "https://bsc-dataseed1.binance.org/:path*"
+    },
+    {
+      "source": "/rpc-bsc-testnet/:path*",
+      "destination": "https://data-seed-prebsc-1-s1.binance.org:8545/:path*"
+    },
+    {
+      "source": "/rpc-polygon-testnet/:path*",
+      "destination": "https://matic-mumbai.chainstacklabs.com/:path*"
+    }
+  ]
+}

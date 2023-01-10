@@ -1,2 +1,2 @@
-# XDC-DeFi-Hackathon
-XDC Network DeFi Hackathon
+Just build and deploy
+Or run and develop
