@@ -78,7 +78,8 @@
   },
   "resolutions": {
     "immer": "^8.0.1",
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "@walletconnect/web3-provider": "1.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -88,6 +89,11 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "postinstall": "rm -rf ./node_modules/@uniswap/sdk; cp -r ./forks/@uniswap/sdk ./node_modules/@uniswap/sdk",
     "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@uniswap/default-token-list": "2.0.0",
+    "dotenv": "^10.0.0",
+    "web3-utils": "^1.5.3"
   },
   "eslintConfig": {
     "extends": "react-app"
